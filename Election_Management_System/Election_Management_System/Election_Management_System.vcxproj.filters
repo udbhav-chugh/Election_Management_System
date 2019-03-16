@@ -48,28 +48,19 @@
     <ClCompile Include="User_Control_Edit_Info.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="User_Control_Create_Election.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="User_Control_Edit_Election.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="User_Control_View_Election.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="User_Control_Update_Agenda.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Form_Elections.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Form_Admin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Form_Elections1.cpp">
+    <ClCompile Include="Form_Election.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Form_Election.cpp">
+    <ClCompile Include="User_Control_Manage_Election.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -113,10 +104,51 @@
     <ClInclude Include="Form_Election.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="User_Control_Create_Election.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="User_Control_Manage_Election.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
       <Filter>Resource Files</Filter>
     </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Form1.resX">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Admin.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Election.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_Homepage.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Edit_Info.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Login.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Public_Elections.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Register.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Update_Agenda.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_View_Election.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_View_info.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
   </ItemGroup>
 </Project>

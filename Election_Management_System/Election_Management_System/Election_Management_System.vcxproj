@@ -90,17 +90,14 @@
     <ClCompile Include="Election_Management_System.cpp" />
     <ClCompile Include="Form_Admin.cpp" />
     <ClCompile Include="Form_Election.cpp" />
-    <ClCompile Include="Form_Elections.cpp" />
-    <ClCompile Include="Form_Elections1.cpp" />
     <ClCompile Include="Form_Homepage.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="User_Control_Create_Election.cpp" />
-    <ClCompile Include="User_Control_Edit_Election.cpp" />
     <ClCompile Include="User_Control_Edit_Info.cpp" />
     <ClCompile Include="User_Control_Login.cpp" />
+    <ClCompile Include="User_Control_Manage_Election.cpp" />
     <ClCompile Include="User_Control_Public_Elections.cpp" />
     <ClCompile Include="User_Control_Register.cpp" />
     <ClCompile Include="User_Control_Update_Agenda.cpp" />
@@ -122,10 +119,16 @@
     </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="User_Control_Create_Election.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="User_Control_Edit_Info.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Login.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="User_Control_Manage_Election.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Public_Elections.h">
@@ -161,11 +164,17 @@
     <EmbeddedResource Include="Form_Homepage.resx">
       <DependentUpon>Form_Homepage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Create_Election.resx">
+      <DependentUpon>User_Control_Create_Election.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Edit_Info.resx">
       <DependentUpon>User_Control_Edit_Info.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Login.resx">
       <DependentUpon>User_Control_Login.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Manage_Election.resx">
+      <DependentUpon>User_Control_Manage_Election.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Public_Elections.resx">
       <DependentUpon>User_Control_Public_Elections.h</DependentUpon>
