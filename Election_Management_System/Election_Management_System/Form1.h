@@ -1,5 +1,7 @@
 #pragma once
 
+#include "User_Control_Register.h"
+
 namespace Election_Management_System {
 
 	using namespace System;
@@ -38,7 +40,8 @@ namespace Election_Management_System {
 	private: System::Windows::Forms::Button^  btn_public_election;
 	private: System::Windows::Forms::Button^  btn_register;
 	private: System::Windows::Forms::Button^  btn_login;
-	private: System::Windows::Forms::Panel^  panel2;
+	private: System::Windows::Forms::Panel^  pnl_output;
+
 	private: System::Windows::Forms::Button^  btn_admin;
 	protected: 
 
@@ -56,11 +59,11 @@ namespace Election_Management_System {
 		void InitializeComponent(void)
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->btn_admin = (gcnew System::Windows::Forms::Button());
 			this->btn_public_election = (gcnew System::Windows::Forms::Button());
 			this->btn_register = (gcnew System::Windows::Forms::Button());
 			this->btn_login = (gcnew System::Windows::Forms::Button());
-			this->panel2 = (gcnew System::Windows::Forms::Panel());
-			this->btn_admin = (gcnew System::Windows::Forms::Button());
+			this->pnl_output = (gcnew System::Windows::Forms::Panel());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -74,6 +77,15 @@ namespace Election_Management_System {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(237, 604);
 			this->panel1->TabIndex = 0;
+			// 
+			// btn_admin
+			// 
+			this->btn_admin->Location = System::Drawing::Point(10, 458);
+			this->btn_admin->Name = L"btn_admin";
+			this->btn_admin->Size = System::Drawing::Size(206, 64);
+			this->btn_admin->TabIndex = 3;
+			this->btn_admin->Text = L"Admin";
+			this->btn_admin->UseVisualStyleBackColor = true;
 			// 
 			// btn_public_election
 			// 
@@ -92,6 +104,7 @@ namespace Election_Management_System {
 			this->btn_register->TabIndex = 1;
 			this->btn_register->Text = L"Register";
 			this->btn_register->UseVisualStyleBackColor = true;
+			this->btn_register->Click += gcnew System::EventHandler(this, &Form1::btn_register_Click);
 			// 
 			// btn_login
 			// 
@@ -102,28 +115,19 @@ namespace Election_Management_System {
 			this->btn_login->Text = L"Login";
 			this->btn_login->UseVisualStyleBackColor = true;
 			// 
-			// panel2
+			// pnl_output
 			// 
-			this->panel2->Location = System::Drawing::Point(239, 117);
-			this->panel2->Name = L"panel2";
-			this->panel2->Size = System::Drawing::Size(767, 604);
-			this->panel2->TabIndex = 1;
-			// 
-			// btn_admin
-			// 
-			this->btn_admin->Location = System::Drawing::Point(10, 458);
-			this->btn_admin->Name = L"btn_admin";
-			this->btn_admin->Size = System::Drawing::Size(206, 64);
-			this->btn_admin->TabIndex = 3;
-			this->btn_admin->Text = L"Admin";
-			this->btn_admin->UseVisualStyleBackColor = true;
+			this->pnl_output->Location = System::Drawing::Point(239, 117);
+			this->pnl_output->Name = L"pnl_output";
+			this->pnl_output->Size = System::Drawing::Size(767, 604);
+			this->pnl_output->TabIndex = 1;
 			// 
 			// Form1
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1006, 721);
-			this->Controls->Add(this->panel2);
+			this->Controls->Add(this->pnl_output);
 			this->Controls->Add(this->panel1);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
@@ -132,6 +136,10 @@ namespace Election_Management_System {
 
 		}
 #pragma endregion
-	};
+	private: System::Void btn_register_Click(System::Object^  sender, System::EventArgs^  e) {
+				pnl_output->Controls->Clear();
+				pnl_output->Controls->Add(gcnew User_Control_Register);
+			 }
+};
 }
 

@@ -40,6 +40,10 @@ namespace Election_Management_System {
 	private: System::Windows::Forms::Label^  label2;
 	private: System::Windows::Forms::Label^  label3;
 	private: System::Windows::Forms::Label^  label4;
+	private: System::Windows::Forms::TextBox^  txt_election_name;
+	private: System::Windows::Forms::TextBox^  textBox2;
+	private: System::Windows::Forms::TextBox^  textBox3;
+	private: System::Windows::Forms::TextBox^  textBox4;
 
 	private:
 		/// <summary>
@@ -58,6 +62,10 @@ namespace Election_Management_System {
 			this->label2 = (gcnew System::Windows::Forms::Label());
 			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->label4 = (gcnew System::Windows::Forms::Label());
+			this->txt_election_name = (gcnew System::Windows::Forms::TextBox());
+			this->textBox2 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox3 = (gcnew System::Windows::Forms::TextBox());
+			this->textBox4 = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -96,10 +104,42 @@ namespace Election_Management_System {
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Election Status";
 			// 
+			// txt_election_name
+			// 
+			this->txt_election_name->Location = System::Drawing::Point(244, 42);
+			this->txt_election_name->Name = L"txt_election_name";
+			this->txt_election_name->Size = System::Drawing::Size(209, 22);
+			this->txt_election_name->TabIndex = 4;
+			// 
+			// textBox2
+			// 
+			this->textBox2->Location = System::Drawing::Point(244, 89);
+			this->textBox2->Name = L"textBox2";
+			this->textBox2->Size = System::Drawing::Size(209, 22);
+			this->textBox2->TabIndex = 5;
+			// 
+			// textBox3
+			// 
+			this->textBox3->Location = System::Drawing::Point(244, 153);
+			this->textBox3->Name = L"textBox3";
+			this->textBox3->Size = System::Drawing::Size(209, 22);
+			this->textBox3->TabIndex = 6;
+			// 
+			// textBox4
+			// 
+			this->textBox4->Location = System::Drawing::Point(244, 228);
+			this->textBox4->Name = L"textBox4";
+			this->textBox4->Size = System::Drawing::Size(209, 22);
+			this->textBox4->TabIndex = 7;
+			// 
 			// User_Control_Create_Election
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->textBox4);
+			this->Controls->Add(this->textBox3);
+			this->Controls->Add(this->textBox2);
+			this->Controls->Add(this->txt_election_name);
 			this->Controls->Add(this->label4);
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
