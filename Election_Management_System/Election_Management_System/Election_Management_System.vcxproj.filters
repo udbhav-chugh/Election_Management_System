@@ -63,6 +63,9 @@
     <ClCompile Include="User_Control_Manage_Election.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="User_Control_User_Request.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -110,6 +113,9 @@
     <ClInclude Include="User_Control_Manage_Election.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="User_Control_User_Request.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -148,6 +154,12 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_View_info.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Create_Election.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Manage_Election.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

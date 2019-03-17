@@ -101,6 +101,7 @@
     <ClCompile Include="User_Control_Public_Elections.cpp" />
     <ClCompile Include="User_Control_Register.cpp" />
     <ClCompile Include="User_Control_Update_Agenda.cpp" />
+    <ClCompile Include="User_Control_User_Request.cpp" />
     <ClCompile Include="User_Control_View_Election.cpp" />
     <ClCompile Include="User_Control_View_info.cpp" />
   </ItemGroup>
@@ -138,6 +139,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Update_Agenda.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="User_Control_User_Request.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_View_Election.h">
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Update_Agenda.resx">
       <DependentUpon>User_Control_Update_Agenda.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_User_Request.resx">
+      <DependentUpon>User_Control_User_Request.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_View_Election.resx">
       <DependentUpon>User_Control_View_Election.h</DependentUpon>
