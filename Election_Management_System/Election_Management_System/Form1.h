@@ -76,38 +76,38 @@ namespace Election_Management_System {
 			this->panel1->Controls->Add(this->btn_public_election);
 			this->panel1->Controls->Add(this->btn_register);
 			this->panel1->Controls->Add(this->btn_login);
-			this->panel1->Location = System::Drawing::Point(2, 95);
-			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel1->Location = System::Drawing::Point(3, 117);
+			this->panel1->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->panel1->Name = L"panel1";
-			this->panel1->Size = System::Drawing::Size(178, 491);
+			this->panel1->Size = System::Drawing::Size(237, 604);
 			this->panel1->TabIndex = 0;
 			// 
 			// btn_admin
 			// 
-			this->btn_admin->Location = System::Drawing::Point(8, 372);
-			this->btn_admin->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_admin->Location = System::Drawing::Point(11, 458);
+			this->btn_admin->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_admin->Name = L"btn_admin";
-			this->btn_admin->Size = System::Drawing::Size(154, 52);
+			this->btn_admin->Size = System::Drawing::Size(205, 64);
 			this->btn_admin->TabIndex = 3;
 			this->btn_admin->Text = L"Admin";
 			this->btn_admin->UseVisualStyleBackColor = true;
 			// 
 			// btn_public_election
 			// 
-			this->btn_public_election->Location = System::Drawing::Point(2, 298);
-			this->btn_public_election->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_public_election->Location = System::Drawing::Point(3, 367);
+			this->btn_public_election->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_public_election->Name = L"btn_public_election";
-			this->btn_public_election->Size = System::Drawing::Size(172, 50);
+			this->btn_public_election->Size = System::Drawing::Size(229, 62);
 			this->btn_public_election->TabIndex = 2;
 			this->btn_public_election->Text = L"View Public Elections";
 			this->btn_public_election->UseVisualStyleBackColor = true;
 			// 
 			// btn_register
 			// 
-			this->btn_register->Location = System::Drawing::Point(2, 243);
-			this->btn_register->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_register->Location = System::Drawing::Point(3, 299);
+			this->btn_register->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_register->Name = L"btn_register";
-			this->btn_register->Size = System::Drawing::Size(172, 50);
+			this->btn_register->Size = System::Drawing::Size(229, 62);
 			this->btn_register->TabIndex = 1;
 			this->btn_register->Text = L"Register";
 			this->btn_register->UseVisualStyleBackColor = true;
@@ -115,10 +115,10 @@ namespace Election_Management_System {
 			// 
 			// btn_login
 			// 
-			this->btn_login->Location = System::Drawing::Point(2, 167);
-			this->btn_login->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_login->Location = System::Drawing::Point(3, 206);
+			this->btn_login->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->btn_login->Name = L"btn_login";
-			this->btn_login->Size = System::Drawing::Size(172, 61);
+			this->btn_login->Size = System::Drawing::Size(229, 75);
 			this->btn_login->TabIndex = 0;
 			this->btn_login->Text = L"Login";
 			this->btn_login->UseVisualStyleBackColor = true;
@@ -126,23 +126,24 @@ namespace Election_Management_System {
 			// 
 			// pnl_output
 			// 
-			this->pnl_output->Location = System::Drawing::Point(179, 95);
-			this->pnl_output->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pnl_output->Location = System::Drawing::Point(239, 117);
+			this->pnl_output->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->pnl_output->Name = L"pnl_output";
-			this->pnl_output->Size = System::Drawing::Size(575, 491);
+			this->pnl_output->Size = System::Drawing::Size(767, 604);
 			this->pnl_output->TabIndex = 1;
 			this->pnl_output->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::pnl_output_Paint);
 			// 
 			// Form1
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
+			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->ClientSize = System::Drawing::Size(754, 586);
+			this->ClientSize = System::Drawing::Size(1005, 721);
 			this->Controls->Add(this->pnl_output);
 			this->Controls->Add(this->panel1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(3, 2, 3, 2);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -157,6 +158,8 @@ private: System::Void pnl_output_Paint(System::Object^  sender, System::Windows:
 private: System::Void btn_login_Click(System::Object^  sender, System::EventArgs^  e) {
 			  pnl_output->Controls->Clear();
 			  pnl_output->Controls->Add(gcnew User_Control_Login);
+		 }
+private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }
