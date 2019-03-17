@@ -66,6 +66,12 @@
     <ClCompile Include="User_Control_User_Request.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="temp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="chutiyapa.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -116,6 +122,9 @@
     <ClInclude Include="User_Control_User_Request.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="temp.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -160,6 +169,9 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Manage_Election.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_User_Request.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

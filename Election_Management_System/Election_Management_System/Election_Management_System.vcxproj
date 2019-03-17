@@ -87,6 +87,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="AssemblyInfo.cpp" />
+    <ClCompile Include="chutiyapa.cpp" />
     <ClCompile Include="Election_Management_System.cpp" />
     <ClCompile Include="Form_Admin.cpp" />
     <ClCompile Include="Form_Election.cpp" />
@@ -95,6 +96,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="temp.cpp" />
     <ClCompile Include="User_Control_Edit_Info.cpp" />
     <ClCompile Include="User_Control_Login.cpp" />
     <ClCompile Include="User_Control_Manage_Election.cpp" />
@@ -120,6 +122,7 @@
     </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
+    <ClInclude Include="temp.h" />
     <ClInclude Include="User_Control_Create_Election.h">
       <FileType>CppControl</FileType>
     </ClInclude>
