@@ -1,4 +1,4 @@
-﻿Build started 18-03-2019 16:37:43.
+﻿Build started 18-03-2019 20:58:34.
      1>Project "C:\Users\chugh\Desktop\election_project3\Election_Management_System\Election_Management_System\Election_Management_System.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
          Creating "Debug\Election_Management_System.unsuccessfulbuild" because "AlwaysCreate" was specified.
@@ -16,7 +16,7 @@
        ResourceCompile:
          All outputs are up-to-date.
        Link:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\chugh\Desktop\election_project3\Election_Management_System\Debug\Election_Management_System.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form1.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form_Admin.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form_Homepage.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Create_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Edit_Info.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Login.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Manage_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Public_Elections.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Register.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Update_Agenda.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_View_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_View_info.resources /MANIFEST /ManifestFile:"Debug\Election_Management_System.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\chugh\Desktop\election_project3\Election_Management_System\Debug\Election_Management_System.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\chugh\Desktop\election_project3\Election_Management_System\Debug\Election_Management_System.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form1.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form_Admin.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form_Homepage.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Create_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Edit_Info.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Login.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Manage_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Nominee.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Public_Elections.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Register.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Update_Agenda.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_View_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_View_info.resources /MANIFEST /ManifestFile:"Debug\Election_Management_System.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\chugh\Desktop\election_project3\Election_Management_System\Debug\Election_Management_System.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
          Debug\AssemblyInfo.obj
          Debug\Election_Management_System.obj
          Debug\Form_Admin.obj
@@ -26,6 +26,7 @@
          Debug\User_Control_Edit_Info.obj
          Debug\User_Control_Login.obj
          Debug\User_Control_Manage_Election.obj
+         Debug\User_Control_Nominee.obj
          Debug\User_Control_Public_Elections.obj
          Debug\User_Control_Register.obj
          Debug\User_Control_Update_Agenda.obj
@@ -42,4 +43,4 @@
 
 Build succeeded.
 
-Time Elapsed 00:00:03.22
+Time Elapsed 00:00:01.88
