@@ -93,136 +93,146 @@ namespace Election_Management_System {
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(105, 87);
+			this->label1->Location = System::Drawing::Point(118, 109);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(46, 17);
+			this->label1->Size = System::Drawing::Size(51, 20);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"label1";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(105, 125);
+			this->label2->Location = System::Drawing::Point(118, 156);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(46, 17);
+			this->label2->Size = System::Drawing::Size(51, 20);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"label2";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
-			this->label3->Location = System::Drawing::Point(105, 168);
+			this->label3->Location = System::Drawing::Point(118, 210);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(46, 17);
+			this->label3->Size = System::Drawing::Size(51, 20);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"label3";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(105, 209);
+			this->label4->Location = System::Drawing::Point(118, 261);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(46, 17);
+			this->label4->Size = System::Drawing::Size(51, 20);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"label4";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(105, 237);
+			this->label5->Location = System::Drawing::Point(118, 296);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(46, 17);
+			this->label5->Size = System::Drawing::Size(51, 20);
 			this->label5->TabIndex = 4;
 			this->label5->Text = L"label5";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(105, 274);
+			this->label6->Location = System::Drawing::Point(118, 342);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(46, 17);
+			this->label6->Size = System::Drawing::Size(51, 20);
 			this->label6->TabIndex = 5;
 			this->label6->Text = L"label6";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(105, 310);
+			this->label7->Location = System::Drawing::Point(118, 388);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(46, 17);
+			this->label7->Size = System::Drawing::Size(51, 20);
 			this->label7->TabIndex = 6;
 			this->label7->Text = L"label7";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(105, 348);
+			this->label8->Location = System::Drawing::Point(118, 435);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(46, 17);
+			this->label8->Size = System::Drawing::Size(51, 20);
 			this->label8->TabIndex = 7;
 			this->label8->Text = L"label8";
 			// 
 			// txt_username
 			// 
-			this->txt_username->Location = System::Drawing::Point(192, 87);
+			this->txt_username->Location = System::Drawing::Point(216, 109);
+			this->txt_username->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txt_username->Name = L"txt_username";
-			this->txt_username->Size = System::Drawing::Size(267, 22);
+			this->txt_username->Size = System::Drawing::Size(300, 26);
 			this->txt_username->TabIndex = 8;
+			this->txt_username->Text = L"My name";
 			// 
 			// txt_password
 			// 
-			this->txt_password->Location = System::Drawing::Point(192, 125);
+			this->txt_password->Location = System::Drawing::Point(216, 156);
+			this->txt_password->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txt_password->Name = L"txt_password";
-			this->txt_password->Size = System::Drawing::Size(267, 22);
+			this->txt_password->Size = System::Drawing::Size(300, 26);
 			this->txt_password->TabIndex = 9;
 			// 
 			// txt_department
 			// 
-			this->txt_department->Location = System::Drawing::Point(192, 168);
+			this->txt_department->Location = System::Drawing::Point(216, 210);
+			this->txt_department->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txt_department->Name = L"txt_department";
-			this->txt_department->Size = System::Drawing::Size(267, 22);
+			this->txt_department->Size = System::Drawing::Size(300, 26);
 			this->txt_department->TabIndex = 10;
 			// 
 			// txt_hostel
 			// 
-			this->txt_hostel->Location = System::Drawing::Point(192, 209);
+			this->txt_hostel->Location = System::Drawing::Point(216, 261);
+			this->txt_hostel->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txt_hostel->Name = L"txt_hostel";
-			this->txt_hostel->Size = System::Drawing::Size(267, 22);
+			this->txt_hostel->Size = System::Drawing::Size(300, 26);
 			this->txt_hostel->TabIndex = 11;
 			// 
 			// txt_program
 			// 
-			this->txt_program->Location = System::Drawing::Point(192, 237);
+			this->txt_program->Location = System::Drawing::Point(216, 296);
+			this->txt_program->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txt_program->Name = L"txt_program";
-			this->txt_program->Size = System::Drawing::Size(267, 22);
+			this->txt_program->Size = System::Drawing::Size(300, 26);
 			this->txt_program->TabIndex = 12;
 			// 
 			// txt_club
 			// 
-			this->txt_club->Location = System::Drawing::Point(192, 274);
+			this->txt_club->Location = System::Drawing::Point(216, 342);
+			this->txt_club->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txt_club->Name = L"txt_club";
-			this->txt_club->Size = System::Drawing::Size(267, 22);
+			this->txt_club->Size = System::Drawing::Size(300, 26);
 			this->txt_club->TabIndex = 13;
 			// 
 			// txt_year_of_join
 			// 
-			this->txt_year_of_join->Location = System::Drawing::Point(192, 311);
+			this->txt_year_of_join->Location = System::Drawing::Point(216, 389);
+			this->txt_year_of_join->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txt_year_of_join->Name = L"txt_year_of_join";
-			this->txt_year_of_join->Size = System::Drawing::Size(267, 22);
+			this->txt_year_of_join->Size = System::Drawing::Size(300, 26);
 			this->txt_year_of_join->TabIndex = 14;
 			// 
 			// txt_full_name
 			// 
-			this->txt_full_name->Location = System::Drawing::Point(192, 343);
+			this->txt_full_name->Location = System::Drawing::Point(216, 429);
+			this->txt_full_name->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->txt_full_name->Name = L"txt_full_name";
-			this->txt_full_name->Size = System::Drawing::Size(267, 22);
+			this->txt_full_name->Size = System::Drawing::Size(300, 26);
 			this->txt_full_name->TabIndex = 15;
 			// 
 			// btn_submit
 			// 
-			this->btn_submit->Location = System::Drawing::Point(295, 413);
+			this->btn_submit->Location = System::Drawing::Point(332, 516);
+			this->btn_submit->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->btn_submit->Name = L"btn_submit";
-			this->btn_submit->Size = System::Drawing::Size(117, 47);
+			this->btn_submit->Size = System::Drawing::Size(132, 59);
 			this->btn_submit->TabIndex = 16;
 			this->btn_submit->Text = L"Submit";
 			this->btn_submit->UseVisualStyleBackColor = true;
@@ -230,7 +240,7 @@ namespace Election_Management_System {
 			// 
 			// User_Control_Register
 			// 
-			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
+			this->AutoScaleDimensions = System::Drawing::SizeF(9, 20);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->btn_submit);
 			this->Controls->Add(this->txt_full_name);
@@ -249,8 +259,9 @@ namespace Election_Management_System {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
+			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"User_Control_Register";
-			this->Size = System::Drawing::Size(767, 604);
+			this->Size = System::Drawing::Size(863, 755);
 			this->Load += gcnew System::EventHandler(this, &User_Control_Register::User_Control_Register_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();

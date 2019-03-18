@@ -1,6 +1,7 @@
 #pragma once
 
 #include "User_Control_Register.h"
+#include "Form_Admin.h"
 
 namespace Election_Management_System {
 
@@ -88,6 +89,7 @@ namespace Election_Management_System {
 			this->btn_admin->TabIndex = 3;
 			this->btn_admin->Text = L"Admin";
 			this->btn_admin->UseVisualStyleBackColor = true;
+			this->btn_admin->Click += gcnew System::EventHandler(this, &Form1::btn_admin_Click);
 			// 
 			// btn_public_election
 			// 
@@ -128,6 +130,7 @@ namespace Election_Management_System {
 			this->pnl_output->Name = L"pnl_output";
 			this->pnl_output->Size = System::Drawing::Size(863, 755);
 			this->pnl_output->TabIndex = 1;
+			this->pnl_output->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form1::pnl_output_Paint);
 			// 
 			// Form1
 			// 
@@ -139,6 +142,7 @@ namespace Election_Management_System {
 			this->Margin = System::Windows::Forms::Padding(3, 4, 3, 4);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -149,6 +153,14 @@ namespace Election_Management_System {
 				pnl_output->Controls->Add(gcnew User_Control_Register);
 			 }
 private: System::Void btn_login_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void btn_admin_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Form_Admin ^ tempForm = gcnew Form_Admin();
+			 tempForm->Show();
+		 }
+private: System::Void pnl_output_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 		 }
 };
 }

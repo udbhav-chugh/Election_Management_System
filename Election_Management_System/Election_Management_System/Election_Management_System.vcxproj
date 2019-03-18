@@ -122,7 +122,6 @@
     </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
-    <ClInclude Include="temp.h" />
     <ClInclude Include="User_Control_Create_Election.h">
       <FileType>CppControl</FileType>
     </ClInclude>

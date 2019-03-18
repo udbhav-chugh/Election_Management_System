@@ -1,41 +1,49 @@
-﻿Build started 17-03-2019 18:59:14.
+﻿Build started 18-03-2019 23:54:01.
      1>Project "C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Election_Management_System\Election_Management_System.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\Election_Management_System.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\Election_Management_System.unsuccessfulbuild".
        GenerateTargetFrameworkMonikerAttribute:
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yc"StdAfx.h" /Fp"Debug\Election_Management_System.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt stdafx.cpp /clr:nostdlib 
-         stdafx.cpp
-         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Election_Management_System.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt AssemblyInfo.cpp Election_Management_System.cpp Form_Admin.cpp Form_Election.cpp Form_Homepage.cpp temp.cpp User_Control_Edit_Info.cpp User_Control_Login.cpp User_Control_Manage_Election.cpp User_Control_Public_Elections.cpp User_Control_Register.cpp User_Control_Update_Agenda.cpp User_Control_User_Request.cpp User_Control_View_Election.cpp User_Control_View_info.cpp /clr:nostdlib 
-         AssemblyInfo.cpp
+         All outputs are up-to-date.
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Election_Management_System.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt Election_Management_System.cpp Form_Admin.cpp User_Control_User_Request.cpp /clr:nostdlib 
          Election_Management_System.cpp
          Form_Admin.cpp
-         Form_Election.cpp
-         Form_Homepage.cpp
-         temp.cpp
-     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\temp.h(10): error C2061: syntax error : identifier 'string'
-     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\temp.h(11): error C2065: 'TextBox' : undeclared identifier
-     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\temp.h(11): error C2065: 'txtbox1' : undeclared identifier
-     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\temp.h(12): error C2065: 'Button' : undeclared identifier
-     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\temp.h(12): error C2065: 'btn_approv' : undeclared identifier
-     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\temp.h(13): error C2065: 'Button' : undeclared identifier
-     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\temp.h(13): error C2065: 'btn_disapprov' : undeclared identifier
-     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\temp.h(21): error C2065: 'txt' : undeclared identifier
-     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\temp.h(21): error C2143: syntax error : missing ';' before '}'
-         User_Control_Edit_Info.cpp
-         User_Control_Login.cpp
-         User_Control_Manage_Election.cpp
-         User_Control_Public_Elections.cpp
-         User_Control_Register.cpp
-         User_Control_Update_Agenda.cpp
          User_Control_User_Request.cpp
-     1>User_Control_User_Request.cpp(3): fatal error C1075: end of file found before the left brace '{' at 'c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_User_Request.h(14)' was matched
-         User_Control_View_Election.cpp
-         User_Control_View_info.cpp
          Generating Code...
-     1>Done Building Project "C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Election_Management_System\Election_Management_System.vcxproj" (build target(s)) -- FAILED.
+         All outputs are up-to-date.
+       CoreResGen:
+         No resources are out of date with respect to their source files. Skipping resource generation.
+       ResourceCompile:
+         All outputs are up-to-date.
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Debug\Election_Management_System.exe" /INCREMENTAL /NOLOGO /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form1.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form_Admin.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.Form_Homepage.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Create_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Edit_Info.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Login.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Manage_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Public_Elections.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Register.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_Update_Agenda.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_User_Request.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_View_Election.resources /ASSEMBLYRESOURCE:Debug\Election_Management_System.User_Control_View_info.resources /MANIFEST /ManifestFile:"Debug\Election_Management_System.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Debug\Election_Management_System.pdb" /ASSEMBLYDEBUG /SUBSYSTEM:WINDOWS /TLBID:1 /ENTRY:"main" /DYNAMICBASE /FIXED:NO /NXCOMPAT /MACHINE:X86 Debug\app.res
+         Debug\AssemblyInfo.obj
+         Debug\chutiyapa.obj
+         Debug\Election_Management_System.obj
+         Debug\Form_Admin.obj
+         Debug\Form_Election.obj
+         Debug\Form_Homepage.obj
+         Debug\stdafx.obj
+         Debug\temp.obj
+         Debug\User_Control_Edit_Info.obj
+         Debug\User_Control_Login.obj
+         Debug\User_Control_Manage_Election.obj
+         Debug\User_Control_Public_Elections.obj
+         Debug\User_Control_Register.obj
+         Debug\User_Control_Update_Agenda.obj
+         Debug\User_Control_User_Request.obj
+         Debug\User_Control_View_Election.obj
+         Debug\User_Control_View_info.obj
+         "Debug\.NETFramework,Version=v4.0.AssemblyAttributes.obj"
+         Election_Management_System.vcxproj -> C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Debug\Election_Management_System.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Debug\Election_Management_System.exe;#1" /manifest Debug\Election_Management_System.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         Deleting file "Debug\Election_Management_System.unsuccessfulbuild".
+         Touching "Debug\Election_Management_System.lastbuildstate".
+     1>Done Building Project "C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Election_Management_System\Election_Management_System.vcxproj" (build target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:02.89
+Time Elapsed 00:00:00.98
