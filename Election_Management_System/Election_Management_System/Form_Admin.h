@@ -1,8 +1,7 @@
 #pragma once
 
 
-#include "User_Control_User_Request.h"
-
+#include "User_Control_User_Request.h";
 namespace Election_Management_System {
 
 	using namespace System;

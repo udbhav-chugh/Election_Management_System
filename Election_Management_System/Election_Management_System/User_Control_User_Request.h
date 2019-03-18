@@ -1,5 +1,6 @@
 #pragma once
 
+
 #using <System.dll>
 #using <System.data.dll>
 #include <string.h>
@@ -66,6 +67,49 @@ namespace Election_Management_System {
 		}
 #pragma endregion
 
+		private: System::Void btn_approv_Click(System::Object ^  sender, System::EventArgs^  e) {
+					System::Windows::Forms::Button ^ temp_btn = gcnew System::Windows::Forms::Button();
+					temp_btn = dynamic_cast<System::Windows::Forms::Button ^>(sender);
+					String ^ name = temp_btn->Name;
+					 MessageBox::Show(name);
+
+				 OleDbConnection ^ DB_Connection2 = gcnew OleDbConnection();
+				 DB_Connection2->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Election_Management_System.accdb";
+				 DB_Connection2->Open();
+
+				 String ^ query2 = "UPDATE Student_Information SET Approved = 'YES' WHERE Username = '" + name + "';" ;
+				 OleDbCommand ^ cmd = gcnew OleDbCommand(query2, DB_Connection2);
+				 cmd->ExecuteNonQuery();
+				 DB_Connection2->Close();
+				 //Form_Admin::btn_userrequest_Click();
+				 this->Controls->Clear();
+				 this->InitializeComponent();
+				 this->User_Control_User_Request_Load(e, e);
+			 }
+
+
+		private: System::Void btn_disapprov_Click(System::Object ^  sender, System::EventArgs^  e) {
+					System::Windows::Forms::Button ^ temp_btn = gcnew System::Windows::Forms::Button();
+					temp_btn = dynamic_cast<System::Windows::Forms::Button ^>(sender);
+					String ^ name = temp_btn->Name;
+					 MessageBox::Show(name);
+
+				 OleDbConnection ^ DB_Connection3 = gcnew OleDbConnection();
+				 DB_Connection3->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Election_Management_System.accdb";
+				 DB_Connection3->Open();
+
+				 String ^ query3 = "DELETE FROM Student_Information WHERE Username ='"+name+"'" ;
+				 OleDbCommand ^ cmd = gcnew OleDbCommand(query3, DB_Connection3);
+				 cmd->ExecuteNonQuery();
+				 //cmd->Dispose();
+				 this->Controls->Clear();
+				 this->InitializeComponent();
+				 this->User_Control_User_Request_Load(e, e);
+				 
+			 }
+
+
+		
 		void creator(int i, String ^ username, String ^ department, String ^ hostelinfo, String ^ program, String ^ clubinfo, int yearofjoining, String ^ fullname){
 			System::Windows::Forms::TextBox ^ txtbox1 = gcnew System::Windows::Forms::TextBox();
 			System::Windows::Forms::Button ^ btn_approv = gcnew System::Windows::Forms::Button();
@@ -112,13 +156,12 @@ namespace Election_Management_System {
 			this->Controls->Add(btn_approv);
 			this->Controls->Add(txtbox1);
 			
+			txtbox1->Text = "Name :" + fullname + " Department :" + department + "\n Hosetl :" + hostelinfo;
+			txtbox1->ScrollToCaret();
+            txtbox1->Refresh();
 
-			
-
-			txtbox1->Text = "My name";
-
-
-
+			btn_approv->Click += gcnew System::EventHandler(this, &User_Control_User_Request::btn_approv_Click);
+			btn_disapprov->Click += gcnew System::EventHandler(this, &User_Control_User_Request::btn_disapprov_Click);
 					
 		
 		}
@@ -152,8 +195,6 @@ namespace Election_Management_System {
 					 i = i + 1;
 
 				 }
-
-
-			 }
-	};
+	}
+};
 }
