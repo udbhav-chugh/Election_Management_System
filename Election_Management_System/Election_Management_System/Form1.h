@@ -1,6 +1,7 @@
 #pragma once
 
 #include "User_Control_Register.h"
+#include "Form_Election.h"
 
 namespace Election_Management_System {
 
@@ -43,6 +44,7 @@ namespace Election_Management_System {
 	private: System::Windows::Forms::Panel^  pnl_output;
 
 	private: System::Windows::Forms::Button^  btn_admin;
+	private: System::Windows::Forms::Button^  button1;
 	protected: 
 
 	private:
@@ -59,6 +61,7 @@ namespace Election_Management_System {
 		void InitializeComponent(void)
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->button1 = (gcnew System::Windows::Forms::Button());
 			this->btn_admin = (gcnew System::Windows::Forms::Button());
 			this->btn_public_election = (gcnew System::Windows::Forms::Button());
 			this->btn_register = (gcnew System::Windows::Forms::Button());
@@ -69,6 +72,7 @@ namespace Election_Management_System {
 			// 
 			// panel1
 			// 
+			this->panel1->Controls->Add(this->button1);
 			this->panel1->Controls->Add(this->btn_admin);
 			this->panel1->Controls->Add(this->btn_public_election);
 			this->panel1->Controls->Add(this->btn_register);
@@ -77,6 +81,16 @@ namespace Election_Management_System {
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(237, 604);
 			this->panel1->TabIndex = 0;
+			// 
+			// button1
+			// 
+			this->button1->Location = System::Drawing::Point(71, 99);
+			this->button1->Name = L"button1";
+			this->button1->Size = System::Drawing::Size(75, 23);
+			this->button1->TabIndex = 4;
+			this->button1->Text = L"button1";
+			this->button1->UseVisualStyleBackColor = true;
+			this->button1->Click += gcnew System::EventHandler(this, &Form1::button1_Click);
 			// 
 			// btn_admin
 			// 
@@ -131,6 +145,7 @@ namespace Election_Management_System {
 			this->Controls->Add(this->panel1);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -140,6 +155,12 @@ namespace Election_Management_System {
 				pnl_output->Controls->Clear();
 				pnl_output->Controls->Add(gcnew User_Control_Register);
 			 }
+private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Form_Election^ frm = gcnew Form_Election();
+			 frm->Show();
+		 }
 };
 }
 
