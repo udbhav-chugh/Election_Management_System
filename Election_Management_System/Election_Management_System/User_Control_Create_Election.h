@@ -91,9 +91,9 @@ namespace Election_Management_System {
 	private: System::Windows::Forms::Button^  btn_organiser;
 	private: System::Windows::Forms::TextBox^  txt_organiser;
 	private: System::Windows::Forms::Label^  label13;
-	private: System::Windows::Forms::DateTimePicker^  dateTimePicker3;
-	private: System::Windows::Forms::DateTimePicker^  dateTimePicker4;
-	private: System::Windows::Forms::TextBox^  temp;
+
+
+
 
 
 
@@ -153,9 +153,6 @@ namespace Election_Management_System {
 			this->btn_organiser = (gcnew System::Windows::Forms::Button());
 			this->txt_organiser = (gcnew System::Windows::Forms::TextBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
-			this->dateTimePicker3 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->dateTimePicker4 = (gcnew System::Windows::Forms::DateTimePicker());
-			this->temp = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -387,7 +384,7 @@ namespace Election_Management_System {
 			// 
 			// start_date
 			// 
-			this->start_date->CustomFormat = L"dd/MM/yyyy    hh:mm:ss";
+			this->start_date->CustomFormat = L"yyyy/MM/dd    hh:mm:ss";
 			this->start_date->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->start_date->Location = System::Drawing::Point(195, 537);
 			this->start_date->Name = L"start_date";
@@ -414,7 +411,7 @@ namespace Election_Management_System {
 			// 
 			// end_date
 			// 
-			this->end_date->CustomFormat = L"dd/MM/yyyy    hh:mm:ss";
+			this->end_date->CustomFormat = L"yyyy/MM/dd    hh:mm:ss";
 			this->end_date->Format = System::Windows::Forms::DateTimePickerFormat::Custom;
 			this->end_date->Location = System::Drawing::Point(195, 582);
 			this->end_date->Name = L"end_date";
@@ -509,36 +506,10 @@ namespace Election_Management_System {
 			this->label13->TabIndex = 56;
 			this->label13->Text = L"Voter";
 			// 
-			// dateTimePicker3
-			// 
-			this->dateTimePicker3->Location = System::Drawing::Point(417, 601);
-			this->dateTimePicker3->Name = L"dateTimePicker3";
-			this->dateTimePicker3->Size = System::Drawing::Size(200, 22);
-			this->dateTimePicker3->TabIndex = 57;
-			// 
-			// dateTimePicker4
-			// 
-			this->dateTimePicker4->Format = System::Windows::Forms::DateTimePickerFormat::Time;
-			this->dateTimePicker4->Location = System::Drawing::Point(435, 573);
-			this->dateTimePicker4->Name = L"dateTimePicker4";
-			this->dateTimePicker4->Size = System::Drawing::Size(200, 22);
-			this->dateTimePicker4->TabIndex = 58;
-			// 
-			// temp
-			// 
-			this->temp->Location = System::Drawing::Point(546, 536);
-			this->temp->Multiline = true;
-			this->temp->Name = L"temp";
-			this->temp->Size = System::Drawing::Size(231, 59);
-			this->temp->TabIndex = 59;
-			// 
 			// User_Control_Create_Election
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->temp);
-			this->Controls->Add(this->dateTimePicker4);
-			this->Controls->Add(this->dateTimePicker3);
 			this->Controls->Add(this->label13);
 			this->Controls->Add(this->txt_organiser);
 			this->Controls->Add(this->btn_delete_organiser);
@@ -740,6 +711,21 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 			MessageBox::Show("Add Election Name");
 			return;
 		}
+		if(lb_voter->Items->Count==0)
+		{
+			MessageBox::Show("Add Voters list");
+			return;
+		}
+		if(lb_organiser->Items->Count==0)
+		{
+			MessageBox::Show("Add Organisers"); //check
+			return;
+		}
+		if(cmb_posts->Items->Count==0)
+		{
+			MessageBox::Show("Add Posts for elections");
+			return;
+		}
 		String^ election_name = txt_election_name->Text;
 		String^ voter_list="";
 		for(int i=0;i<lb_voter->Items->Count;i++)
@@ -760,14 +746,17 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 		String^ s_time=Convert::ToString(start_date->Value.ToLongTimeString());
 		String^ e_date=Convert::ToString(end_date->Value.Date);
 		String^ e_time=Convert::ToString(end_date->Value.ToLongTimeString());
-
 		String^ visibility=Convert::ToString(comboBox1->SelectedIndex);
-		String ^ insertString = "INSERT INTO Election_Information ([ID],[Election_Name],[Voter_List],[Organiser_Head],[Organiser_List],[Post_List],[Approved],[Visibility],[Start_Date],[Start_Time],[End_Date],[End_Time],[Election_Ongoing],[Agenda_Update]) VALUES(1,'" + election_name + "', '" + voter_list + "', '" + "abc" + "','" + organiser_list + "','" + post_list + "','" + "NO" + "', '" + visibility + "', '" + s_date + "','" + s_time + "', '" + e_date + "', '" + e_time + "', '" + "0" + "', '" + "0" + "')";
+		String ^ insertString = "INSERT INTO Election_Information ([Election_Name],[Voter_List],[Organiser_Head],[Organiser_List],[Post_List],[Approved],[Visibility],[Start_Date],[Start_Time],[End_Date],[End_Time],[Election_Ongoing],[Agenda_Update]) VALUES('" + election_name + "', '" + voter_list + "', '" + "abc" + "','" + organiser_list + "','" + post_list + "','" + "NO" + "', '" + visibility + "', '" + s_date + "','" + s_time + "', '" + e_date + "', '" + e_time + "', '" + "0" + "', '" + "0" + "')";
 			OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
 			OleDbDataReader ^ reader = cmd->ExecuteReader();
 			reader->Close();
 		DB_Connection->Close();
-
+		MessageBox::Show("Election Added. Approval Pending by admin");
+		txt_election_name->Clear();
+		lb_voter->Items->Clear();
+		lb_organiser->Items->Clear();
+		cmb_posts->Items->Clear();
 		 }
 
 };
