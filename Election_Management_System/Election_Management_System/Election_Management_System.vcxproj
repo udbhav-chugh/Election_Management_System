@@ -97,6 +97,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="temp.cpp" />
+    <ClCompile Include="User_Control_Delete_Election.cpp" />
     <ClCompile Include="User_Control_Delete_User.cpp" />
     <ClCompile Include="User_Control_Edit_Info.cpp" />
     <ClCompile Include="User_Control_Election_Request.cpp" />
@@ -126,6 +127,9 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="User_Control_Create_Election.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="User_Control_Delete_Election.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Delete_User.h">
@@ -184,6 +188,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Create_Election.resx">
       <DependentUpon>User_Control_Create_Election.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Delete_Election.resx">
+      <DependentUpon>User_Control_Delete_Election.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Delete_User.resx">
       <DependentUpon>User_Control_Delete_User.h</DependentUpon>

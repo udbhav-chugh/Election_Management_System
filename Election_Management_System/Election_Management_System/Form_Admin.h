@@ -5,6 +5,8 @@
 #include "User_Control_Election_Request.h";
 #include "User_Control_Update_User.h"
 #include "User_Control_Delete_User.h"
+#include "User_Control_Delete_Election.h"
+
 namespace Election_Management_System {
 
 	using namespace System;
@@ -98,6 +100,7 @@ namespace Election_Management_System {
 			this->btn_deleteelection->TabIndex = 4;
 			this->btn_deleteelection->Text = L"Delete Election";
 			this->btn_deleteelection->UseVisualStyleBackColor = true;
+			this->btn_deleteelection->Click += gcnew System::EventHandler(this, &Form_Admin::btn_deleteelection_Click);
 			// 
 			// btn_electionrequest
 			// 
@@ -205,6 +208,10 @@ private: System::Void btn_updateuser_Click(System::Object^  sender, System::Even
 private: System::Void btn_deleteuser_Click(System::Object^  sender, System::EventArgs^  e) {
 			 this->panel2->Controls->Clear();
 			 this->panel2->Controls->Add(gcnew User_Control_Delete_User);
+		 }
+private: System::Void btn_deleteelection_Click(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel2->Controls->Clear();
+			 this->panel2->Controls->Add(gcnew User_Control_Delete_Election);
 		 }
 };
 }

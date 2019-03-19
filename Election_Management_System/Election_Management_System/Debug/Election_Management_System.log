@@ -1,25 +1,31 @@
-﻿Build started 20-03-2019 01:33:02.
+﻿Build started 20-03-2019 02:18:48.
      1>Project "C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Election_Management_System\Election_Management_System.vcxproj" on node 2 (build target(s)).
      1>InitializeBuildStatus:
-         Creating "Debug\Election_Management_System.unsuccessfulbuild" because "AlwaysCreate" was specified.
+         Touching "Debug\Election_Management_System.unsuccessfulbuild".
        GenerateTargetFrameworkMonikerAttribute:
        Skipping target "GenerateTargetFrameworkMonikerAttribute" because all output files are up-to-date with respect to the input files.
        ClCompile:
          All outputs are up-to-date.
-         All outputs are up-to-date.
-         All outputs are up-to-date.
-       CoreResGen:
-         No resources are out of date with respect to their source files. Skipping resource generation.
-       ResourceCompile:
-         All outputs are up-to-date.
-       Link:
-         All outputs are up-to-date.
-         Election_Management_System.vcxproj -> C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Debug\Election_Management_System.exe
-       FinalizeBuildStatus:
-         Deleting file "Debug\Election_Management_System.unsuccessfulbuild".
-         Touching "Debug\Election_Management_System.lastbuildstate".
-     1>Done Building Project "C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Election_Management_System\Election_Management_System.vcxproj" (build target(s)).
+         C:\Program Files (x86)\Microsoft Visual Studio 10.0\VC\bin\CL.exe /c /AI"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0" /Zi /clr:pure /nologo /W3 /WX- /Od /Oy- /D WIN32 /D _DEBUG /D _UNICODE /D UNICODE /EHa /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Yu"StdAfx.h" /Fp"Debug\Election_Management_System.pch" /Fo"Debug\\" /Fd"Debug\vc100.pdb" /TP /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Core.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Data.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Drawing.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Windows.Forms.dll" /FU"C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.0\System.Xml.dll" /analyze- /errorReport:prompt Election_Management_System.cpp Form_Admin.cpp User_Control_Delete_Election.cpp /clr:nostdlib 
+         Election_Management_System.cpp
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\Form_Admin.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\Form_Admin.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_Delete_Election.h(68): error C2039: 'Year' : is not a member of 'System::DateTime::Now'
+                 c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_User_Request.h(119) : see declaration of 'System::DateTime::Now'
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_Delete_Election.h(68): error C2065: 'Year' : undeclared identifier
+         Form_Admin.cpp
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\Form_Admin.h(4): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\Form_Admin.h(5): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_Delete_Election.h(68): error C2039: 'Year' : is not a member of 'System::DateTime::Now'
+                 c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_User_Request.h(119) : see declaration of 'System::DateTime::Now'
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_Delete_Election.h(68): error C2065: 'Year' : undeclared identifier
+         User_Control_Delete_Election.cpp
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_Delete_Election.h(68): error C2039: 'Year' : is not a member of 'System::DateTime::Now'
+                 c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_Delete_Election.h(68) : see declaration of 'System::DateTime::Now'
+     1>c:\users\aditya vardhan gara\desktop\election2\election_management_system\election_management_system\election_management_system\User_Control_Delete_Election.h(68): error C2065: 'Year' : undeclared identifier
+         Generating Code...
+     1>Done Building Project "C:\Users\ADITYA VARDHAN GARA\Desktop\election2\Election_Management_System\Election_Management_System\Election_Management_System\Election_Management_System.vcxproj" (build target(s)) -- FAILED.
 
-Build succeeded.
+Build FAILED.
 
-Time Elapsed 00:00:00.15
+Time Elapsed 00:00:00.76
