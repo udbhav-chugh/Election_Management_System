@@ -64,7 +64,7 @@ namespace Election_Management_System {
 	internal: System::Windows::Forms::Label^  label9;
 
 	private: System::Windows::Forms::Button^  button1;
-	private: System::Windows::Forms::ComboBox^  cmb_posts;
+
 	private: System::Windows::Forms::TextBox^  txt_post;
 	private: System::Windows::Forms::Button^  btn_addpost;
 
@@ -91,6 +91,8 @@ namespace Election_Management_System {
 	private: System::Windows::Forms::Button^  btn_organiser;
 	private: System::Windows::Forms::TextBox^  txt_organiser;
 	private: System::Windows::Forms::Label^  label13;
+	private: System::Windows::Forms::CheckedListBox^  lb_post;
+	private: System::Windows::Forms::TextBox^  txt_num_nominee;
 
 
 
@@ -133,7 +135,6 @@ namespace Election_Management_System {
 			this->hostel = (gcnew System::Windows::Forms::ComboBox());
 			this->label9 = (gcnew System::Windows::Forms::Label());
 			this->button1 = (gcnew System::Windows::Forms::Button());
-			this->cmb_posts = (gcnew System::Windows::Forms::ComboBox());
 			this->txt_post = (gcnew System::Windows::Forms::TextBox());
 			this->btn_addpost = (gcnew System::Windows::Forms::Button());
 			this->comboBox1 = (gcnew System::Windows::Forms::ComboBox());
@@ -153,6 +154,8 @@ namespace Election_Management_System {
 			this->btn_organiser = (gcnew System::Windows::Forms::Button());
 			this->txt_organiser = (gcnew System::Windows::Forms::TextBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
+			this->lb_post = (gcnew System::Windows::Forms::CheckedListBox());
+			this->txt_num_nominee = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -326,15 +329,6 @@ namespace Election_Management_System {
 			this->button1->UseVisualStyleBackColor = true;
 			this->button1->Click += gcnew System::EventHandler(this, &User_Control_Create_Election::button1_Click);
 			// 
-			// cmb_posts
-			// 
-			this->cmb_posts->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
-			this->cmb_posts->FormattingEnabled = true;
-			this->cmb_posts->Location = System::Drawing::Point(146, 457);
-			this->cmb_posts->Name = L"cmb_posts";
-			this->cmb_posts->Size = System::Drawing::Size(240, 24);
-			this->cmb_posts->TabIndex = 31;
-			// 
 			// txt_post
 			// 
 			this->txt_post->Location = System::Drawing::Point(454, 457);
@@ -344,7 +338,7 @@ namespace Election_Management_System {
 			// 
 			// btn_addpost
 			// 
-			this->btn_addpost->Location = System::Drawing::Point(560, 458);
+			this->btn_addpost->Location = System::Drawing::Point(659, 457);
 			this->btn_addpost->Name = L"btn_addpost";
 			this->btn_addpost->Size = System::Drawing::Size(75, 23);
 			this->btn_addpost->TabIndex = 33;
@@ -506,10 +500,27 @@ namespace Election_Management_System {
 			this->label13->TabIndex = 56;
 			this->label13->Text = L"Voter";
 			// 
+			// lb_post
+			// 
+			this->lb_post->FormattingEnabled = true;
+			this->lb_post->Location = System::Drawing::Point(102, 450);
+			this->lb_post->Name = L"lb_post";
+			this->lb_post->Size = System::Drawing::Size(342, 72);
+			this->lb_post->TabIndex = 57;
+			// 
+			// txt_num_nominee
+			// 
+			this->txt_num_nominee->Location = System::Drawing::Point(584, 457);
+			this->txt_num_nominee->Name = L"txt_num_nominee";
+			this->txt_num_nominee->Size = System::Drawing::Size(37, 22);
+			this->txt_num_nominee->TabIndex = 58;
+			// 
 			// User_Control_Create_Election
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->txt_num_nominee);
+			this->Controls->Add(this->lb_post);
 			this->Controls->Add(this->label13);
 			this->Controls->Add(this->txt_organiser);
 			this->Controls->Add(this->btn_delete_organiser);
@@ -529,7 +540,6 @@ namespace Election_Management_System {
 			this->Controls->Add(this->comboBox1);
 			this->Controls->Add(this->btn_addpost);
 			this->Controls->Add(this->txt_post);
-			this->Controls->Add(this->cmb_posts);
 			this->Controls->Add(this->button1);
 			this->Controls->Add(this->label9);
 			this->Controls->Add(this->hostel);
@@ -605,18 +615,29 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		 }
 private: System::Void btn_addpost_Click(System::Object^  sender, System::EventArgs^  e) {
 			
-		String^ str = txt_post->Text;
-		if(String::Compare(str,""))
+		String^ str = txt_post->Text+" -" + txt_num_nominee->Text+"(Nominee Count)";
+		if(String::Compare(txt_post->Text,""))
 		{
-			cmb_posts->Items->Add(str);
-			txt_post->Clear();
+			if(String::Compare(txt_num_nominee->Text,""))
+			{
+				lb_post->Items->Add(str);
+				txt_post->Clear();
+				txt_num_nominee->Clear();
+			}
+			else
+			{
+				MessageBox::Show("Add Number of nominees");
+			}
+		}
+		else
+		{
+			MessageBox::Show("Add Post first");
 		}
 		 }
 private: System::Void btn_delete_post_Click(System::Object^  sender, System::EventArgs^  e) {
-			 if(cmb_posts->Items->Count > 0)
+			 for(int x=lb_post->CheckedItems->Count-1; x>=0  ; x--)
 			 {
-				 String^ str=cmb_posts->Text;
-				cmb_posts->Items->Remove(str);
+				 lb_post->Items->Remove(lb_post->CheckedItems[x]);
 			 }
 		 }
 private: System::Void btn_single_voter_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -720,7 +741,7 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 			MessageBox::Show("Add Organisers"); //check
 			return;
 		}
-		if(cmb_posts->Items->Count==0)
+		if(lb_post->Items->Count==0)
 		{
 			MessageBox::Show("Add Posts for elections");
 			return;
@@ -737,9 +758,34 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 			organiser_list=organiser_list + lb_organiser->Items[i] + "," ;
 		}
 		String^ post_list = "";
-		for(int i=0;i<cmb_posts->Items->Count; i++)
+		int arr[10];
+		int val=0;
+		for(int i=0;i<lb_post->Items->Count; i++)
 		{
-			post_list = post_list + cmb_posts->Items[i] + ",";
+			String^ temp="";
+			int nominee_count=0;
+			String^ str_nominee_count="";
+			String^temp2=Convert::ToString(lb_post->Items[i]);
+			for(int j=0;j<temp2->Length;j++)
+			{
+				if(String::Compare(Convert::ToString(temp2[j])," ")==0)
+				{
+					for(int k=j+2;;k++)
+					{
+						if(temp2[k]>='0' && temp2[k]<='9')
+							str_nominee_count+=temp2[k];
+						else
+							break;
+					}
+					nominee_count=Convert::ToInt32(str_nominee_count);
+	
+					break;
+				}
+				temp+=temp2[j];
+				
+			}
+			post_list = post_list + temp + ",";
+			arr[val++]=nominee_count;
 		}
 		String^ s_date=Convert::ToString(start_date->Value.Date);
 		String^ s_time=Convert::ToString(start_date->Value.ToLongTimeString());
@@ -750,12 +796,46 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 			OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
 			OleDbDataReader ^ reader = cmd->ExecuteReader();
 			reader->Close();
+		String ^ selectString = "SELECT * FROM Election_Information";
+
+		OleDbCommand ^ cmd2 = gcnew OleDbCommand(selectString, DB_Connection);
+		OleDbDataReader ^ reader2 = cmd2->ExecuteReader();
+		int election_id;
+		String^ posts;
+		while(reader2->Read())
+		{
+			election_id=reader2->GetInt32(0);
+			posts=reader2->GetString(5);
+		}
+		reader2->Close();
+
+		int j=0;
+		for(int i=0;i<val;i++)
+		{
+			String^ temp="";
+			while(posts[j]!=',')
+			{
+				temp+=posts[j];
+				j++;
+			}
+			j++;
+			
+			for(int k=0;k<arr[i];k++)
+			{
+				String ^ insertString2 = "INSERT INTO Nominees_Infromation ([Election_ID],[Election_Post],[Nominee_Username],[Agenda],[Votes],[Approved_Organiser],[Approved_Admin]) VALUES(" + election_id + ", '" + temp + "', '" + "*" + "','" + "*" + "'," + 0 + ",'" + "YES" + "', '" + "NO" + "')";
+				OleDbCommand ^ cmd3 = gcnew OleDbCommand(insertString2, DB_Connection);
+				OleDbDataReader ^ reader3 = cmd3->ExecuteReader();
+				reader3->Close();
+			}
+		}
+
 		DB_Connection->Close();
 		MessageBox::Show("Election Added. Approval Pending by admin");
 		txt_election_name->Clear();
 		lb_voter->Items->Clear();
 		lb_organiser->Items->Clear();
-		cmb_posts->Items->Clear();
+		lb_post->Items->Clear();
+		txt_num_nominee->Clear();
 		 }
 
 };
