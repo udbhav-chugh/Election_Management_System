@@ -157,8 +157,8 @@ private: System::Void btn_login_Click(System::Object^  sender, System::EventArgs
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
 		 }
 private: System::Void btn_admin_Click(System::Object^  sender, System::EventArgs^  e) {
-			 Form_Admin ^ tempForm = gcnew Form_Admin();
-			 tempForm->Show();
+			 Form_Admin ^ adminForm = gcnew Form_Admin();
+			 adminForm->Show();
 		 }
 private: System::Void pnl_output_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
 		 }

@@ -170,6 +170,7 @@ namespace Election_Management_System {
 			this->txt_username->Size = System::Drawing::Size(300, 26);
 			this->txt_username->TabIndex = 8;
 			this->txt_username->Text = L"My name";
+			this->txt_username->TextChanged += gcnew System::EventHandler(this, &User_Control_Register::txt_username_TextChanged);
 			// 
 			// txt_password
 			// 
@@ -288,6 +289,8 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 			
 			OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
 			OleDbDataReader ^ reader = cmd->ExecuteReader();
+		 }
+private: System::Void txt_username_TextChanged(System::Object^  sender, System::EventArgs^  e) {
 		 }
 };
 }

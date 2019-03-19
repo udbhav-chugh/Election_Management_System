@@ -2,6 +2,9 @@
 
 
 #include "User_Control_User_Request.h";
+#include "User_Control_Election_Request.h";
+#include "User_Control_Update_User.h"
+#include "User_Control_Delete_User.h"
 namespace Election_Management_System {
 
 	using namespace System;
@@ -106,6 +109,7 @@ namespace Election_Management_System {
 			this->btn_electionrequest->TabIndex = 3;
 			this->btn_electionrequest->Text = L"Election Requests";
 			this->btn_electionrequest->UseVisualStyleBackColor = true;
+			this->btn_electionrequest->Click += gcnew System::EventHandler(this, &Form_Admin::btn_electionrequest_Click);
 			// 
 			// btn_deleteuser
 			// 
@@ -117,6 +121,7 @@ namespace Election_Management_System {
 			this->btn_deleteuser->TabIndex = 2;
 			this->btn_deleteuser->Text = L"Delete User";
 			this->btn_deleteuser->UseVisualStyleBackColor = true;
+			this->btn_deleteuser->Click += gcnew System::EventHandler(this, &Form_Admin::btn_deleteuser_Click);
 			// 
 			// btn_updateuser
 			// 
@@ -128,6 +133,7 @@ namespace Election_Management_System {
 			this->btn_updateuser->TabIndex = 1;
 			this->btn_updateuser->Text = L"Update User Info";
 			this->btn_updateuser->UseVisualStyleBackColor = true;
+			this->btn_updateuser->Click += gcnew System::EventHandler(this, &Form_Admin::btn_updateuser_Click);
 			// 
 			// btn_userrequest
 			// 
@@ -188,5 +194,17 @@ namespace Election_Management_System {
 				this->panel2->Controls->Add(gcnew User_Control_User_Request);			
 				 
 			 }
+private: System::Void btn_electionrequest_Click(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel2->Controls->Clear();
+			 this->panel2->Controls->Add(gcnew User_Control_Election_Request);
+		 }
+private: System::Void btn_updateuser_Click(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel2->Controls->Clear();
+			 this->panel2->Controls->Add(gcnew User_Control_Update_User);
+		 }
+private: System::Void btn_deleteuser_Click(System::Object^  sender, System::EventArgs^  e) {
+			 this->panel2->Controls->Clear();
+			 this->panel2->Controls->Add(gcnew User_Control_Delete_User);
+		 }
 };
 }

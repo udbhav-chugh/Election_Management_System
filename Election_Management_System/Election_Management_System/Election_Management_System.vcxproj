@@ -97,12 +97,15 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="temp.cpp" />
+    <ClCompile Include="User_Control_Delete_User.cpp" />
     <ClCompile Include="User_Control_Edit_Info.cpp" />
+    <ClCompile Include="User_Control_Election_Request.cpp" />
     <ClCompile Include="User_Control_Login.cpp" />
     <ClCompile Include="User_Control_Manage_Election.cpp" />
     <ClCompile Include="User_Control_Public_Elections.cpp" />
     <ClCompile Include="User_Control_Register.cpp" />
     <ClCompile Include="User_Control_Update_Agenda.cpp" />
+    <ClCompile Include="User_Control_Update_User.cpp" />
     <ClCompile Include="User_Control_User_Request.cpp" />
     <ClCompile Include="User_Control_View_Election.cpp" />
     <ClCompile Include="User_Control_View_info.cpp" />
@@ -125,7 +128,13 @@
     <ClInclude Include="User_Control_Create_Election.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="User_Control_Delete_User.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="User_Control_Edit_Info.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="User_Control_Election_Request.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Login.h">
@@ -141,6 +150,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Update_Agenda.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="User_Control_Update_User.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_User_Request.h">
@@ -173,8 +185,14 @@
     <EmbeddedResource Include="User_Control_Create_Election.resx">
       <DependentUpon>User_Control_Create_Election.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Delete_User.resx">
+      <DependentUpon>User_Control_Delete_User.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Edit_Info.resx">
       <DependentUpon>User_Control_Edit_Info.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Election_Request.resx">
+      <DependentUpon>User_Control_Election_Request.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Login.resx">
       <DependentUpon>User_Control_Login.h</DependentUpon>
@@ -190,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Update_Agenda.resx">
       <DependentUpon>User_Control_Update_Agenda.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Update_User.resx">
+      <DependentUpon>User_Control_Update_User.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_User_Request.resx">
       <DependentUpon>User_Control_User_Request.h</DependentUpon>

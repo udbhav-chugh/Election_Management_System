@@ -101,6 +101,7 @@ namespace Election_Management_System {
 				 String ^ query3 = "DELETE FROM Student_Information WHERE Username ='"+name+"'" ;
 				 OleDbCommand ^ cmd = gcnew OleDbCommand(query3, DB_Connection3);
 				 cmd->ExecuteNonQuery();
+				 DB_Connection3->Close();
 				 //cmd->Dispose();
 				 this->Controls->Clear();
 				 this->InitializeComponent();
@@ -156,8 +157,19 @@ namespace Election_Management_System {
 			this->Controls->Add(btn_approv);
 			this->Controls->Add(txtbox1);
 			
-			txtbox1->Text = "Name :" + fullname + " Department :" + department + "\n Hosetl :" + hostelinfo;
+			txtbox1->Text = " Name : " + fullname + "\r\n  Department : " + department + "\r\n  Hostel : " + hostelinfo + "\r\n  Program : " + program + "\r\n  Clubs :";
+			String ^ Clubs = "";
+			for(int j = 0; j < clubinfo->Length; j++){
+				if (clubinfo[j] != ','){
+					Clubs += Convert::ToString(clubinfo[j]) ;
+				}
+				else{
+					txtbox1->Text += "\r\n" + "   -" + Clubs; 
+					Clubs = "";
+				}
+			}
 			txtbox1->ScrollToCaret();
+			txtbox1->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
             txtbox1->Refresh();
 
 			btn_approv->Click += gcnew System::EventHandler(this, &User_Control_User_Request::btn_approv_Click);
@@ -179,6 +191,7 @@ namespace Election_Management_System {
 				 String ^ query = " SELECT * FROM Student_Information WHERE Approved = 'NO'";
 				 OleDbCommand ^ cmd = gcnew OleDbCommand(query, DB_Connection);
 				 OleDbDataReader ^ reader = cmd->ExecuteReader();
+				 //DB_Connection->Close();
 
 				 while(reader->Read() == true){
 
