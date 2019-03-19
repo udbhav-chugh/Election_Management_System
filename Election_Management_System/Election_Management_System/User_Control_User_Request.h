@@ -111,7 +111,7 @@ namespace Election_Management_System {
 
 
 		
-		void creator(int i, String ^ username, String ^ department, String ^ hostelinfo, String ^ program, String ^ clubinfo, int yearofjoining, String ^ fullname){
+		void creator(int i, String ^ username, String ^ department, String ^ hostelinfo, String ^ program, String ^ clubinfo, String ^ yearofjoining, String ^ fullname){
 			System::Windows::Forms::TextBox ^ txtbox1 = gcnew System::Windows::Forms::TextBox();
 			System::Windows::Forms::Button ^ btn_approv = gcnew System::Windows::Forms::Button();
 			System::Windows::Forms::Button ^ btn_disapprov = gcnew System::Windows::Forms::Button();
@@ -200,7 +200,7 @@ namespace Election_Management_System {
 					 String ^ hostelinfo = reader->GetString(3);
 					 String ^ program = reader->GetString(4);
 					 String ^ clubinfo = reader->GetString(5);
-					 int yearofjoining = reader->GetInt32(6);
+					 String ^ yearofjoining = reader->GetString(6);
 					 String ^ fullname  = reader->GetString(7);
 					 
 					 creator(i, username, department, hostelinfo, program, clubinfo, yearofjoining, fullname);

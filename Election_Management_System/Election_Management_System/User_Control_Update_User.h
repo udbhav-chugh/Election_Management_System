@@ -382,7 +382,7 @@ private: System::Void btn_search_Click(System::Object^  sender, System::EventArg
 			 OleDbDataReader ^ reader = cmd->ExecuteReader();
 			 int flag = 0;
 			 String ^ fullname;
-			 int yearofjoining;
+			 String ^ yearofjoining;
 			 String ^ clubinfo;
 			 String ^ program;
 			 String ^ hostelinfo;
@@ -395,7 +395,7 @@ private: System::Void btn_search_Click(System::Object^  sender, System::EventArg
 				 hostelinfo = reader->GetString(3);
 				 program = reader->GetString(4);
 				 clubinfo = reader->GetString(5);
-				 yearofjoining = reader->GetInt32(6);
+				 yearofjoining = reader->GetString(6);
 				 fullname  = reader->GetString(7);
 				 flag = 1;
 			 }
@@ -476,7 +476,7 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 				 //MessageBox::Show(club);
 
 				 
-				 String ^ insertString = "UPDATE Student_Information SET Department = '" + department +"' , Hostel_Information = '" + hostel +"' , Program = '" + program + "' , Club_Information = '" + club + "' , Year_Of_Joining = " + year_of_join + " , Full_Name = '" + full_name + "' WHERE Username = '" + username + "';";
+				 String ^ insertString = "UPDATE Student_Information SET Department = '" + department +"' , Hostel_Information = '" + hostel +"' , Program = '" + program + "' , Club_Information = '" + club + "' , Year_Of_Joining = '" + year_of_join + "' , Full_Name = '" + full_name + "' WHERE Username = '" + username + "';";
 				 //MessageBox::Show(insertString);
 				 OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
 				 cmd->ExecuteNonQuery();
