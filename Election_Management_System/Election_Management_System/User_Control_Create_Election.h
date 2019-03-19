@@ -588,12 +588,11 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			str4="%";
 		if(String::Compare(str5,"")==0)
 			str5="%";
-		
 		//String^ selectString = "SELECT * FROM Student_Information WHERE Approved='YES' ORDER BY Full_Name"; 
         String^ selectString = "SELECT * FROM Student_Information WHERE Department LIKE '"+str1+"' AND Club_Information LIKE '"+str2+"' AND Program LIKE '"+str3+"' AND Hostel_Information LIKE '"+str4+"' AND Year_Of_Joining LIKE '"+str5+"' AND Approved='YES' ORDER BY Full_Name";
         OleDbCommand ^ cmd = gcnew OleDbCommand(selectString, DB_Connection);
 		OleDbDataReader ^ reader = cmd->ExecuteReader();
-
+		lb_voter->Items->Clear();
         while(reader->Read())
         {
 			if(lb_voter->Items->Contains(reader->GetString(1)))

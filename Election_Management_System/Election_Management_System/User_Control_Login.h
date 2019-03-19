@@ -70,9 +70,12 @@ namespace Election_Management_System {
 			this->Controls->Add(this->btn_login);
 			this->Name = L"User_Control_Login";
 			this->Size = System::Drawing::Size(767, 604);
+			this->Load += gcnew System::EventHandler(this, &User_Control_Login::User_Control_Login_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void User_Control_Login_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
 	};
 }

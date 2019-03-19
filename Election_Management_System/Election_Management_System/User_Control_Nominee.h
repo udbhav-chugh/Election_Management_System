@@ -39,6 +39,8 @@ namespace Election_Management_System {
 	private: System::Windows::Forms::ListBox^  lb_nominee;
 	private: System::Windows::Forms::Button^  btn_nominee;
 	private: System::Windows::Forms::TextBox^  txt_nominee;
+	private: System::Windows::Forms::ComboBox^  cmb_posts;
+	private: System::Windows::Forms::Label^  label3;
 	protected: 
 
 	private:
@@ -58,12 +60,14 @@ namespace Election_Management_System {
 			this->lb_nominee = (gcnew System::Windows::Forms::ListBox());
 			this->btn_nominee = (gcnew System::Windows::Forms::Button());
 			this->txt_nominee = (gcnew System::Windows::Forms::TextBox());
+			this->cmb_posts = (gcnew System::Windows::Forms::ComboBox());
+			this->label3 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
 			// label1
 			// 
 			this->label1->AutoSize = true;
-			this->label1->Location = System::Drawing::Point(38, 109);
+			this->label1->Location = System::Drawing::Point(38, 222);
 			this->label1->Name = L"label1";
 			this->label1->Size = System::Drawing::Size(71, 17);
 			this->label1->TabIndex = 0;
@@ -73,14 +77,14 @@ namespace Election_Management_System {
 			// 
 			this->lb_nominee->FormattingEnabled = true;
 			this->lb_nominee->ItemHeight = 16;
-			this->lb_nominee->Location = System::Drawing::Point(172, 126);
+			this->lb_nominee->Location = System::Drawing::Point(153, 222);
 			this->lb_nominee->Name = L"lb_nominee";
 			this->lb_nominee->Size = System::Drawing::Size(333, 84);
 			this->lb_nominee->TabIndex = 1;
 			// 
 			// btn_nominee
 			// 
-			this->btn_nominee->Location = System::Drawing::Point(659, 142);
+			this->btn_nominee->Location = System::Drawing::Point(548, 269);
 			this->btn_nominee->Name = L"btn_nominee";
 			this->btn_nominee->Size = System::Drawing::Size(137, 23);
 			this->btn_nominee->TabIndex = 2;
@@ -90,15 +94,35 @@ namespace Election_Management_System {
 			// 
 			// txt_nominee
 			// 
-			this->txt_nominee->Location = System::Drawing::Point(528, 142);
+			this->txt_nominee->Location = System::Drawing::Point(528, 219);
 			this->txt_nominee->Name = L"txt_nominee";
 			this->txt_nominee->Size = System::Drawing::Size(100, 22);
 			this->txt_nominee->TabIndex = 3;
+			// 
+			// cmb_posts
+			// 
+			this->cmb_posts->DropDownStyle = System::Windows::Forms::ComboBoxStyle::DropDownList;
+			this->cmb_posts->FormattingEnabled = true;
+			this->cmb_posts->Location = System::Drawing::Point(313, 42);
+			this->cmb_posts->Name = L"cmb_posts";
+			this->cmb_posts->Size = System::Drawing::Size(240, 24);
+			this->cmb_posts->TabIndex = 33;
+			// 
+			// label3
+			// 
+			this->label3->AutoSize = true;
+			this->label3->Location = System::Drawing::Point(171, 45);
+			this->label3->Name = L"label3";
+			this->label3->Size = System::Drawing::Size(43, 17);
+			this->label3->TabIndex = 32;
+			this->label3->Text = L"Posts";
 			// 
 			// User_Control_Nominee
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->cmb_posts);
+			this->Controls->Add(this->label3);
 			this->Controls->Add(this->txt_nominee);
 			this->Controls->Add(this->btn_nominee);
 			this->Controls->Add(this->lb_nominee);
