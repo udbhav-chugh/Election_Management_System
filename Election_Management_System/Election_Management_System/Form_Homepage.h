@@ -1,8 +1,8 @@
 #pragma once
-#include "glblvariables.h"
 #include "User_Control_Edit_Info.h"
 #include "User_Control_View_info.h"
 #include "User_Control_View_Election.h"
+#include "User_Control_Update_Agenda.h"
 namespace Election_Management_System {
 
 	using namespace System;
@@ -95,6 +95,7 @@ namespace Election_Management_System {
 			this->btn_logout->TabIndex = 6;
 			this->btn_logout->Text = L"Logout";
 			this->btn_logout->UseVisualStyleBackColor = true;
+			this->btn_logout->Click += gcnew System::EventHandler(this, &Form_Homepage::btn_logout_Click);
 			// 
 			// btn_update_agenda
 			// 
@@ -104,6 +105,7 @@ namespace Election_Management_System {
 			this->btn_update_agenda->TabIndex = 4;
 			this->btn_update_agenda->Text = L"Update Agenda";
 			this->btn_update_agenda->UseVisualStyleBackColor = true;
+			this->btn_update_agenda->Click += gcnew System::EventHandler(this, &Form_Homepage::btn_update_agenda_Click);
 			// 
 			// btn_view_election
 			// 
@@ -158,6 +160,7 @@ namespace Election_Management_System {
 			this->label1->Size = System::Drawing::Size(46, 17);
 			this->label1->TabIndex = 2;
 			this->label1->Text = L"label1";
+			this->label1->Click += gcnew System::EventHandler(this, &Form_Homepage::label1_Click);
 			// 
 			// Form_Homepage
 			// 
@@ -175,18 +178,42 @@ namespace Election_Management_System {
 			this->PerformLayout();
 
 		}
+		public: property System::String^ SomeText
+			{
+				System::String^ get()
+				{
+					return label1->Text;
+				}
+				void set(System::String^ text)
+				{
+					label1->Text = text;
+				}
+			}
 #pragma endregion
 	private: System::Void Form_Homepage_Load(System::Object^  sender, System::EventArgs^  e) {
-				 int username=1;
-				 this->label1->Text = Convert::ToString(username);
-			 }
+		}
 private: System::Void btn_view_info_Click(System::Object^  sender, System::EventArgs^  e) {
 			 panel2->Controls->Clear();
-				panel2->Controls->Add(gcnew User_Control_View_info);
+			 User_Control_View_info ^ dumb_view = gcnew User_Control_View_info;
+			 dumb_view->SomeText=this->label1->Text;
+				panel2->Controls->Add( dumb_view);
 		 }
 private: System::Void btn_edit_info_Click(System::Object^  sender, System::EventArgs^  e) {
 			 panel2->Controls->Clear();
-				panel2->Controls->Add(gcnew User_Control_Edit_Info);
+			 User_Control_Edit_Info ^ dumb_edit = gcnew User_Control_Edit_Info;
+			 dumb_edit->SomeText=this->label1->Text;
+				panel2->Controls->Add(dumb_edit);
+		 }
+private: System::Void btn_logout_Click(System::Object^  sender, System::EventArgs^  e) {
+			 this->Hide();
+		 }
+private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void btn_update_agenda_Click(System::Object^  sender, System::EventArgs^  e) {
+			 panel2->Controls->Clear();
+			 User_Control_Update_Agenda ^ dumb_agenda = gcnew User_Control_Update_Agenda;
+			 dumb_agenda->SomeText=this->label1->Text;
+			 panel2->Controls->Add(dumb_agenda);
 		 }
 };
 }

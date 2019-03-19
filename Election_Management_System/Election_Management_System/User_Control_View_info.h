@@ -250,11 +250,22 @@ namespace Election_Management_System {
 			this->PerformLayout();
 
 		}
+		public: property System::String^ SomeText
+			{
+				System::String^ get()
+				{
+					return txt_username->Text;
+				}
+				void set(System::String^ text)
+				{
+					txt_username->Text = text;
+				}
+			}
 #pragma endregion
 	private: System::Void User_Control_View_info_Load(System::Object^  sender, System::EventArgs^  e) {
 				 OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Election_Management_System.accdb";
-			String ^ str="1";
+			String ^ str=txt_username->Text;
 			DB_Connection->Open();
 			String ^ readstring = "SELECT * FROM Student_Information WHERE Username='"+str+"'";
 			
@@ -269,7 +280,7 @@ namespace Election_Management_System {
 					txt_hostel->Text=Convert::ToString(reader->GetString(3));
 					txt_program->Text=Convert::ToString(reader->GetString(4));
 					txt_club->Text=Convert::ToString(reader->GetString(5));
-					txt_year_of_join->Text=Convert::ToString(reader->GetInt32(6));
+					txt_year_of_join->Text=Convert::ToString(reader->GetString(6));
 					txt_full_name->Text=Convert::ToString(reader->GetString(7));
 			}
 			reader->Close();

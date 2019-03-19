@@ -1,7 +1,6 @@
 #pragma once
 
 #include "Form_Homepage.h"
-#include "glblvariables.h"
 
 #using <System.dll>
 #using <System.data.dll>
@@ -139,6 +138,7 @@ namespace Election_Management_System {
 		private: System::Void User_Control_Login_Load(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void btn_login_Click(System::Object^  sender, System::EventArgs^  e) {
+				
 			OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
 			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Election_Management_System.accdb";
 			String ^ username = txt_username->Text;
@@ -161,9 +161,10 @@ namespace Election_Management_System {
 					{
 						// LOG IN SUCCESFULL
 						//MessageBox::Show(current_Login);
-						Form_Homepage ^ frm = gcnew Form_Homepage;
-						int username=5;
-						frm->Show();
+						Form_Homepage ^ dumb_frm = gcnew Form_Homepage;
+						dumb_frm->SomeText=this->txt_username->Text;
+						MessageBox::Show(dumb_frm->SomeText);
+						dumb_frm->Show();
 					}
 				}
 			}
