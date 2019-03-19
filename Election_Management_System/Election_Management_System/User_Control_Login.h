@@ -1,6 +1,7 @@
 #pragma once
 
 #include "Form_Homepage.h"
+#include "glblvariables.h"
 
 #using <System.dll>
 #using <System.data.dll>
@@ -161,6 +162,7 @@ namespace Election_Management_System {
 						// LOG IN SUCCESFULL
 						//MessageBox::Show(current_Login);
 						Form_Homepage ^ frm = gcnew Form_Homepage;
+						int username=5;
 						frm->Show();
 					}
 				}

@@ -1,11 +1,13 @@
 #pragma once
-
+#using <System.dll>
+#using <System.data.dll>
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
+using namespace System::Data::OleDb;
 
 
 namespace Election_Management_System {
@@ -94,6 +96,7 @@ namespace Election_Management_System {
 			this->btn_submit->TabIndex = 33;
 			this->btn_submit->Text = L"Submit";
 			this->btn_submit->UseVisualStyleBackColor = true;
+			this->btn_submit->Click += gcnew System::EventHandler(this, &User_Control_Edit_Info::btn_submit_Click);
 			// 
 			// txt_full_name
 			// 
@@ -246,10 +249,57 @@ namespace Election_Management_System {
 			this->Controls->Add(this->label1);
 			this->Name = L"User_Control_Edit_Info";
 			this->Size = System::Drawing::Size(767, 604);
+			this->Load += gcnew System::EventHandler(this, &User_Control_Edit_Info::User_Control_Edit_Info_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void btn_submit_Click(System::Object^  sender, System::EventArgs^  e) {
+				 OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
+			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Election_Management_System.accdb";
+
+			String ^ str="1";
+			String ^ username = txt_username->Text;
+			String ^ password = txt_password->Text;
+			String ^ department = txt_department->Text;
+			String ^ hostel = txt_hostel->Text;
+			String ^ program = txt_program->Text;
+			String ^ club = txt_club->Text;
+			String ^ year_of_join = txt_year_of_join->Text;
+			String ^ full_name = txt_full_name->Text;
+		
+			DB_Connection->Open();
+			String ^ updateString = "UPDATE Student_Information SET Username='" + username + "', [Password]='" + password + "', Department='" + department + "', Hostel_Information='" + hostel + "', Program='" + program + "', Club_Information='" + club + "', Year_Of_Joining='" + year_of_join + "', Full_Name='" + full_name + "' WHERE Username='"+str+"'";
+			
+			OleDbCommand ^ cmd1 = gcnew OleDbCommand(updateString, DB_Connection);
+			OleDbDataReader ^ reader1 = cmd1->ExecuteReader();
+			reader1->Close();
+			DB_Connection->Close();
+			 }
+private: System::Void User_Control_Edit_Info_Load(System::Object^  sender, System::EventArgs^  e) {
+			 OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
+			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Election_Management_System.accdb";
+			DB_Connection->Open();
+			String ^ str="1";
+			String ^ readstring = "SELECT * FROM Student_Information WHERE Username='"+str+"'";
+			
+			OleDbCommand ^ cmd = gcnew OleDbCommand(readstring, DB_Connection);
+			OleDbDataReader ^ reader = cmd->ExecuteReader();
+
+			while(reader->Read() == true)
+			{
+					txt_username->Text=Convert::ToString(reader->GetString(0));
+					txt_password->Text=Convert::ToString(reader->GetString(1));
+					txt_department->Text=Convert::ToString(reader->GetString(2));
+					txt_hostel->Text=Convert::ToString(reader->GetString(3));
+					txt_program->Text=Convert::ToString(reader->GetString(4));
+					txt_club->Text=Convert::ToString(reader->GetString(5));
+					txt_year_of_join->Text=Convert::ToString(reader->GetInt32(6));
+					txt_full_name->Text=Convert::ToString(reader->GetString(7));
+			}
+			reader->Close();
+			DB_Connection->Close();
+		 }
+};
 }

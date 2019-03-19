@@ -278,6 +278,8 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 			
 			OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
 			OleDbDataReader ^ reader = cmd->ExecuteReader();
+			reader->Close();
+			DB_Connection->Close();
 		 }
 };
 }

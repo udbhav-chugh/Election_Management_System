@@ -1,11 +1,13 @@
 #pragma once
-
+#using <System.dll>
+#using <System.data.dll>
 using namespace System;
 using namespace System::ComponentModel;
 using namespace System::Collections;
 using namespace System::Windows::Forms;
 using namespace System::Data;
 using namespace System::Drawing;
+using namespace System::Data::OleDb;
 
 
 namespace Election_Management_System {
@@ -35,7 +37,7 @@ namespace Election_Management_System {
 				delete components;
 			}
 		}
-	private: System::Windows::Forms::Button^  btn_submit;
+
 	protected: 
 	private: System::Windows::Forms::TextBox^  txt_full_name;
 	private: System::Windows::Forms::TextBox^  txt_year_of_join;
@@ -67,7 +69,6 @@ namespace Election_Management_System {
 		/// </summary>
 		void InitializeComponent(void)
 		{
-			this->btn_submit = (gcnew System::Windows::Forms::Button());
 			this->txt_full_name = (gcnew System::Windows::Forms::TextBox());
 			this->txt_year_of_join = (gcnew System::Windows::Forms::TextBox());
 			this->txt_club = (gcnew System::Windows::Forms::TextBox());
@@ -86,19 +87,11 @@ namespace Election_Management_System {
 			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->SuspendLayout();
 			// 
-			// btn_submit
-			// 
-			this->btn_submit->Location = System::Drawing::Point(396, 442);
-			this->btn_submit->Name = L"btn_submit";
-			this->btn_submit->Size = System::Drawing::Size(117, 47);
-			this->btn_submit->TabIndex = 33;
-			this->btn_submit->Text = L"Submit";
-			this->btn_submit->UseVisualStyleBackColor = true;
-			// 
 			// txt_full_name
 			// 
 			this->txt_full_name->Location = System::Drawing::Point(293, 372);
 			this->txt_full_name->Name = L"txt_full_name";
+			this->txt_full_name->ReadOnly = true;
 			this->txt_full_name->Size = System::Drawing::Size(267, 22);
 			this->txt_full_name->TabIndex = 32;
 			// 
@@ -106,6 +99,7 @@ namespace Election_Management_System {
 			// 
 			this->txt_year_of_join->Location = System::Drawing::Point(293, 340);
 			this->txt_year_of_join->Name = L"txt_year_of_join";
+			this->txt_year_of_join->ReadOnly = true;
 			this->txt_year_of_join->Size = System::Drawing::Size(267, 22);
 			this->txt_year_of_join->TabIndex = 31;
 			// 
@@ -113,6 +107,7 @@ namespace Election_Management_System {
 			// 
 			this->txt_club->Location = System::Drawing::Point(293, 303);
 			this->txt_club->Name = L"txt_club";
+			this->txt_club->ReadOnly = true;
 			this->txt_club->Size = System::Drawing::Size(267, 22);
 			this->txt_club->TabIndex = 30;
 			// 
@@ -120,6 +115,7 @@ namespace Election_Management_System {
 			// 
 			this->txt_program->Location = System::Drawing::Point(293, 266);
 			this->txt_program->Name = L"txt_program";
+			this->txt_program->ReadOnly = true;
 			this->txt_program->Size = System::Drawing::Size(267, 22);
 			this->txt_program->TabIndex = 29;
 			// 
@@ -127,6 +123,7 @@ namespace Election_Management_System {
 			// 
 			this->txt_hostel->Location = System::Drawing::Point(293, 238);
 			this->txt_hostel->Name = L"txt_hostel";
+			this->txt_hostel->ReadOnly = true;
 			this->txt_hostel->Size = System::Drawing::Size(267, 22);
 			this->txt_hostel->TabIndex = 28;
 			// 
@@ -134,6 +131,7 @@ namespace Election_Management_System {
 			// 
 			this->txt_department->Location = System::Drawing::Point(293, 197);
 			this->txt_department->Name = L"txt_department";
+			this->txt_department->ReadOnly = true;
 			this->txt_department->Size = System::Drawing::Size(267, 22);
 			this->txt_department->TabIndex = 27;
 			// 
@@ -141,6 +139,7 @@ namespace Election_Management_System {
 			// 
 			this->txt_password->Location = System::Drawing::Point(293, 154);
 			this->txt_password->Name = L"txt_password";
+			this->txt_password->ReadOnly = true;
 			this->txt_password->Size = System::Drawing::Size(267, 22);
 			this->txt_password->TabIndex = 26;
 			// 
@@ -148,6 +147,7 @@ namespace Election_Management_System {
 			// 
 			this->txt_username->Location = System::Drawing::Point(293, 116);
 			this->txt_username->Name = L"txt_username";
+			this->txt_username->ReadOnly = true;
 			this->txt_username->Size = System::Drawing::Size(267, 22);
 			this->txt_username->TabIndex = 25;
 			// 
@@ -227,7 +227,6 @@ namespace Election_Management_System {
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->btn_submit);
 			this->Controls->Add(this->txt_full_name);
 			this->Controls->Add(this->txt_year_of_join);
 			this->Controls->Add(this->txt_club);
@@ -246,10 +245,35 @@ namespace Election_Management_System {
 			this->Controls->Add(this->label1);
 			this->Name = L"User_Control_View_info";
 			this->Size = System::Drawing::Size(767, 604);
+			this->Load += gcnew System::EventHandler(this, &User_Control_View_info::User_Control_View_info_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-	};
+	private: System::Void User_Control_View_info_Load(System::Object^  sender, System::EventArgs^  e) {
+				 OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
+			DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Election_Management_System.accdb";
+			String ^ str="1";
+			DB_Connection->Open();
+			String ^ readstring = "SELECT * FROM Student_Information WHERE Username='"+str+"'";
+			
+			OleDbCommand ^ cmd = gcnew OleDbCommand(readstring, DB_Connection);
+			OleDbDataReader ^ reader = cmd->ExecuteReader();
+
+			while(reader->Read() == true)
+			{
+					txt_username->Text=Convert::ToString(reader->GetString(0));
+					txt_password->Text=Convert::ToString(reader->GetString(1));
+					txt_department->Text=Convert::ToString(reader->GetString(2));
+					txt_hostel->Text=Convert::ToString(reader->GetString(3));
+					txt_program->Text=Convert::ToString(reader->GetString(4));
+					txt_club->Text=Convert::ToString(reader->GetString(5));
+					txt_year_of_join->Text=Convert::ToString(reader->GetInt32(6));
+					txt_full_name->Text=Convert::ToString(reader->GetString(7));
+			}
+			reader->Close();
+			DB_Connection->Close();
+			 }
+};
 }
