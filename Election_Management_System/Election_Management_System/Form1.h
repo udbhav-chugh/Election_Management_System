@@ -2,6 +2,7 @@
 
 #include "User_Control_Register.h"
 #include "Form_Election.h"
+#include "User_Control_Login.h"
 
 namespace Election_Management_System {
 
@@ -128,6 +129,7 @@ namespace Election_Management_System {
 			this->btn_login->TabIndex = 0;
 			this->btn_login->Text = L"Login";
 			this->btn_login->UseVisualStyleBackColor = true;
+			this->btn_login->Click += gcnew System::EventHandler(this, &Form1::btn_login_Click);
 			// 
 			// pnl_output
 			// 
@@ -151,16 +153,26 @@ namespace Election_Management_System {
 
 		}
 #pragma endregion
-	private: System::Void btn_register_Click(System::Object^  sender, System::EventArgs^  e) {
-				pnl_output->Controls->Clear();
-				pnl_output->Controls->Add(gcnew User_Control_Register);
-			 }
+private: System::Void btn_register_Click(System::Object^  sender, System::EventArgs^  e) {
+			 pnl_output->Controls->Clear();
+			 pnl_output->Controls->Add(gcnew User_Control_Register);
+		 }
+private: System::Void pnl_output_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+		 }
+private: System::Void btn_login_Click(System::Object^  sender, System::EventArgs^  e) {
+			 pnl_output->Controls->Clear();
+			 pnl_output->Controls->Add(gcnew User_Control_Login);
+		 }
 private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void btn_public_election_Click(System::Object^  sender, System::EventArgs^  e) {
+
 		 }
 private: System::Void button1_Click(System::Object^  sender, System::EventArgs^  e) {
 			 Form_Election^ frm = gcnew Form_Election();
 			 frm->Show();
 		 }
+
 };
 }
 

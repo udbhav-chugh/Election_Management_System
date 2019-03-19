@@ -98,7 +98,6 @@
     <ClCompile Include="User_Control_Edit_Info.cpp" />
     <ClCompile Include="User_Control_Login.cpp" />
     <ClCompile Include="User_Control_Manage_Election.cpp" />
-    <ClCompile Include="User_Control_Nominee.cpp" />
     <ClCompile Include="User_Control_Public_Elections.cpp" />
     <ClCompile Include="User_Control_Register.cpp" />
     <ClCompile Include="User_Control_Update_Agenda.cpp" />
@@ -130,9 +129,6 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Manage_Election.h">
-      <FileType>CppControl</FileType>
-    </ClInclude>
-    <ClInclude Include="User_Control_Nominee.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Public_Elections.h">
@@ -179,9 +175,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Manage_Election.resx">
       <DependentUpon>User_Control_Manage_Election.h</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="User_Control_Nominee.resx">
-      <DependentUpon>User_Control_Nominee.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Public_Elections.resx">
       <DependentUpon>User_Control_Public_Elections.h</DependentUpon>

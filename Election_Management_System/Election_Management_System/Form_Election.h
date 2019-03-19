@@ -1,7 +1,6 @@
 #pragma once
 
 #include "User_Control_Create_Election.h"
-#include "User_Control_Nominee.h"
 
 namespace Election_Management_System {
 
@@ -44,7 +43,7 @@ namespace Election_Management_System {
 	private: System::Windows::Forms::Button^  btn_go_back;
 	private: System::Windows::Forms::Button^  btn_manage_election;
 	private: System::Windows::Forms::Button^  btn_create_election;
-	private: System::Windows::Forms::Button^  btn_add_nominee;
+
 	protected: 
 
 	protected: 
@@ -67,13 +66,11 @@ namespace Election_Management_System {
 			this->btn_manage_election = (gcnew System::Windows::Forms::Button());
 			this->btn_create_election = (gcnew System::Windows::Forms::Button());
 			this->pnl_output = (gcnew System::Windows::Forms::Panel());
-			this->btn_add_nominee = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
 			// panel1
 			// 
-			this->panel1->Controls->Add(this->btn_add_nominee);
 			this->panel1->Controls->Add(this->btn_go_back);
 			this->panel1->Controls->Add(this->btn_manage_election);
 			this->panel1->Controls->Add(this->btn_create_election);
@@ -119,16 +116,6 @@ namespace Election_Management_System {
 			this->pnl_output->TabIndex = 1;
 			this->pnl_output->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Election::panel2_Paint);
 			// 
-			// btn_add_nominee
-			// 
-			this->btn_add_nominee->Location = System::Drawing::Point(11, 226);
-			this->btn_add_nominee->Name = L"btn_add_nominee";
-			this->btn_add_nominee->Size = System::Drawing::Size(141, 39);
-			this->btn_add_nominee->TabIndex = 3;
-			this->btn_add_nominee->Text = L"Create Nominees";
-			this->btn_add_nominee->UseVisualStyleBackColor = true;
-			this->btn_add_nominee->Click += gcnew System::EventHandler(this, &Form_Election::btn_add_nominee_Click);
-			// 
 			// Form_Election
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
@@ -153,10 +140,6 @@ private: System::Void btn_create_election_Click(System::Object^  sender, System:
 			 pnl_output->Controls->Add(gcnew User_Control_Create_Election);
 		 }
 private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
-		 }
-private: System::Void btn_add_nominee_Click(System::Object^  sender, System::EventArgs^  e) {
-			 pnl_output->Controls->Clear();
-			 pnl_output->Controls->Add(gcnew User_Control_Nominee);
 		 }
 };
 }
