@@ -2,7 +2,7 @@
 
 #include "User_Control_Register.h"
 #include "User_Control_Login.h"
-
+#include "User_Admin.h"
 
 
 namespace Election_Management_System {
@@ -19,6 +19,8 @@ namespace Election_Management_System {
 	/// </summary>
 	public ref class Form1 : public System::Windows::Forms::Form
 	{
+		public: 
+			  int id;
 	public:
 		Form1(void)
 		{
@@ -77,7 +79,7 @@ namespace Election_Management_System {
 			this->panel1->Controls->Add(this->btn_register);
 			this->panel1->Controls->Add(this->btn_login);
 			this->panel1->Location = System::Drawing::Point(2, 95);
-			this->panel1->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->panel1->Margin = System::Windows::Forms::Padding(2);
 			this->panel1->Name = L"panel1";
 			this->panel1->Size = System::Drawing::Size(178, 491);
 			this->panel1->TabIndex = 0;
@@ -85,27 +87,29 @@ namespace Election_Management_System {
 			// btn_admin
 			// 
 			this->btn_admin->Location = System::Drawing::Point(8, 372);
-			this->btn_admin->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_admin->Margin = System::Windows::Forms::Padding(2);
 			this->btn_admin->Name = L"btn_admin";
 			this->btn_admin->Size = System::Drawing::Size(154, 52);
 			this->btn_admin->TabIndex = 3;
 			this->btn_admin->Text = L"Admin";
 			this->btn_admin->UseVisualStyleBackColor = true;
+			this->btn_admin->Click += gcnew System::EventHandler(this, &Form1::btn_admin_Click);
 			// 
 			// btn_public_election
 			// 
 			this->btn_public_election->Location = System::Drawing::Point(2, 298);
-			this->btn_public_election->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_public_election->Margin = System::Windows::Forms::Padding(2);
 			this->btn_public_election->Name = L"btn_public_election";
 			this->btn_public_election->Size = System::Drawing::Size(172, 50);
 			this->btn_public_election->TabIndex = 2;
 			this->btn_public_election->Text = L"View Public Elections";
 			this->btn_public_election->UseVisualStyleBackColor = true;
+			this->btn_public_election->Click += gcnew System::EventHandler(this, &Form1::btn_public_election_Click);
 			// 
 			// btn_register
 			// 
 			this->btn_register->Location = System::Drawing::Point(2, 243);
-			this->btn_register->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_register->Margin = System::Windows::Forms::Padding(2);
 			this->btn_register->Name = L"btn_register";
 			this->btn_register->Size = System::Drawing::Size(172, 50);
 			this->btn_register->TabIndex = 1;
@@ -116,7 +120,7 @@ namespace Election_Management_System {
 			// btn_login
 			// 
 			this->btn_login->Location = System::Drawing::Point(2, 167);
-			this->btn_login->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->btn_login->Margin = System::Windows::Forms::Padding(2);
 			this->btn_login->Name = L"btn_login";
 			this->btn_login->Size = System::Drawing::Size(172, 61);
 			this->btn_login->TabIndex = 0;
@@ -127,7 +131,7 @@ namespace Election_Management_System {
 			// pnl_output
 			// 
 			this->pnl_output->Location = System::Drawing::Point(179, 95);
-			this->pnl_output->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->pnl_output->Margin = System::Windows::Forms::Padding(2);
 			this->pnl_output->Name = L"pnl_output";
 			this->pnl_output->Size = System::Drawing::Size(575, 491);
 			this->pnl_output->TabIndex = 1;
@@ -140,9 +144,10 @@ namespace Election_Management_System {
 			this->ClientSize = System::Drawing::Size(754, 586);
 			this->Controls->Add(this->pnl_output);
 			this->Controls->Add(this->panel1);
-			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
+			this->Margin = System::Windows::Forms::Padding(2);
 			this->Name = L"Form1";
 			this->Text = L"Form1";
+			this->Load += gcnew System::EventHandler(this, &Form1::Form1_Load);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
 
@@ -157,6 +162,15 @@ private: System::Void pnl_output_Paint(System::Object^  sender, System::Windows:
 private: System::Void btn_login_Click(System::Object^  sender, System::EventArgs^  e) {
 			  pnl_output->Controls->Clear();
 			  pnl_output->Controls->Add(gcnew User_Control_Login);
+		 }
+private: System::Void Form1_Load(System::Object^  sender, System::EventArgs^  e) {
+		 }
+private: System::Void btn_admin_Click(System::Object^  sender, System::EventArgs^  e) {
+			  pnl_output->Controls->Clear();
+			  pnl_output->Controls->Add(gcnew User_Admin);
+		 }
+private: System::Void btn_public_election_Click(System::Object^  sender, System::EventArgs^  e) {
+
 		 }
 };
 }

@@ -103,6 +103,7 @@
     <ClCompile Include="User_Control_Update_Agenda.cpp" />
     <ClCompile Include="User_Control_View_Election.cpp" />
     <ClCompile Include="User_Control_View_info.cpp" />
+    <ClCompile Include="View_Public_Elections.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -144,6 +145,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_View_info.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="View_Public_Elections.h">
       <FileType>CppControl</FileType>
     </ClInclude>
   </ItemGroup>
@@ -190,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_View_info.resx">
       <DependentUpon>User_Control_View_info.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Public_Elections.resx">
+      <DependentUpon>View_Public_Elections.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

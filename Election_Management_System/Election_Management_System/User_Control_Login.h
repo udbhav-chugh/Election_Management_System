@@ -2,6 +2,7 @@
 
 #include "Form_Homepage.h"
 
+
 #using <System.dll>
 #using <System.data.dll>
 
@@ -75,7 +76,7 @@ namespace Election_Management_System {
 			// 
 			// btn_login
 			// 
-			this->btn_login->Location = System::Drawing::Point(192, 251);
+			this->btn_login->Location = System::Drawing::Point(206, 256);
 			this->btn_login->Margin = System::Windows::Forms::Padding(2);
 			this->btn_login->Name = L"btn_login";
 			this->btn_login->Size = System::Drawing::Size(162, 38);
@@ -86,14 +87,14 @@ namespace Election_Management_System {
 			// 
 			// txt_username
 			// 
-			this->txt_username->Location = System::Drawing::Point(207, 85);
+			this->txt_username->Location = System::Drawing::Point(233, 100);
 			this->txt_username->Name = L"txt_username";
 			this->txt_username->Size = System::Drawing::Size(100, 20);
 			this->txt_username->TabIndex = 1;
 			// 
 			// txt_password
 			// 
-			this->txt_password->Location = System::Drawing::Point(207, 139);
+			this->txt_password->Location = System::Drawing::Point(233, 164);
 			this->txt_password->Name = L"txt_password";
 			this->txt_password->PasswordChar = '*';
 			this->txt_password->Size = System::Drawing::Size(100, 20);
@@ -102,7 +103,7 @@ namespace Election_Management_System {
 			// lbl_password
 			// 
 			this->lbl_password->AutoSize = true;
-			this->lbl_password->Location = System::Drawing::Point(109, 139);
+			this->lbl_password->Location = System::Drawing::Point(135, 167);
 			this->lbl_password->Name = L"lbl_password";
 			this->lbl_password->Size = System::Drawing::Size(53, 13);
 			this->lbl_password->TabIndex = 5;
@@ -111,7 +112,7 @@ namespace Election_Management_System {
 			// lbl_username
 			// 
 			this->lbl_username->AutoSize = true;
-			this->lbl_username->Location = System::Drawing::Point(109, 88);
+			this->lbl_username->Location = System::Drawing::Point(133, 103);
 			this->lbl_username->Name = L"lbl_username";
 			this->lbl_username->Size = System::Drawing::Size(55, 13);
 			this->lbl_username->TabIndex = 7;
@@ -158,8 +159,10 @@ namespace Election_Management_System {
 					}
 					else
 					{
+						//Form1 ^ f3 = gcnew Form1(id);
+						//SomeGlobalVariables.curr_username = txt_password->Text;
 						// LOG IN SUCCESFULL
-						//MessageBox::Show(current_Login);
+						//MessageBox::Show(f3->id);
 						Form_Homepage ^ frm = gcnew Form_Homepage;
 						frm->Show();
 					}
