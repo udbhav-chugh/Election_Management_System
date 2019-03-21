@@ -95,15 +95,21 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="User_Control_Delete_Election.cpp" />
+    <ClCompile Include="User_Control_Delete_User.cpp" />
     <ClCompile Include="User_Control_Edit_Info.cpp" />
+    <ClCompile Include="User_Control_Election_Request.cpp" />
     <ClCompile Include="User_Control_Login.cpp" />
     <ClCompile Include="User_Control_Manage_Election.cpp" />
     <ClCompile Include="User_Control_Nominee.cpp" />
     <ClCompile Include="User_Control_Public_Elections.cpp" />
     <ClCompile Include="User_Control_Register.cpp" />
     <ClCompile Include="User_Control_Update_Agenda.cpp" />
+    <ClCompile Include="User_Control_Update_User.cpp" />
+    <ClCompile Include="User_Control_User_Request.cpp" />
     <ClCompile Include="User_Control_View_Election.cpp" />
     <ClCompile Include="User_Control_View_info.cpp" />
+    <ClCompile Include="View_Public_Elections.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -123,7 +129,16 @@
     <ClInclude Include="User_Control_Create_Election.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="User_Control_Delete_Election.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="User_Control_Delete_User.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="User_Control_Edit_Info.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="User_Control_Election_Request.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Login.h">
@@ -144,10 +159,19 @@
     <ClInclude Include="User_Control_Update_Agenda.h">
       <FileType>CppControl</FileType>
     </ClInclude>
+    <ClInclude Include="User_Control_Update_User.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="User_Control_User_Request.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
     <ClInclude Include="User_Control_View_Election.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_View_info.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="View_Public_Elections.h">
       <FileType>CppControl</FileType>
     </ClInclude>
   </ItemGroup>
@@ -171,8 +195,17 @@
     <EmbeddedResource Include="User_Control_Create_Election.resx">
       <DependentUpon>User_Control_Create_Election.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Delete_Election.resx">
+      <DependentUpon>User_Control_Delete_Election.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Delete_User.resx">
+      <DependentUpon>User_Control_Delete_User.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Edit_Info.resx">
       <DependentUpon>User_Control_Edit_Info.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Election_Request.resx">
+      <DependentUpon>User_Control_Election_Request.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Login.resx">
       <DependentUpon>User_Control_Login.h</DependentUpon>
@@ -192,11 +225,20 @@
     <EmbeddedResource Include="User_Control_Update_Agenda.resx">
       <DependentUpon>User_Control_Update_Agenda.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Update_User.resx">
+      <DependentUpon>User_Control_Update_User.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_User_Request.resx">
+      <DependentUpon>User_Control_User_Request.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Control_View_Election.resx">
       <DependentUpon>User_Control_View_Election.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_View_info.resx">
       <DependentUpon>User_Control_View_info.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Public_Elections.resx">
+      <DependentUpon>View_Public_Elections.h</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

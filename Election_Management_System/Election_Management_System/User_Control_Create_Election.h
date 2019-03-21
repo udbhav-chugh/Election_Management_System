@@ -92,7 +92,7 @@ namespace Election_Management_System {
 	private: System::Windows::Forms::TextBox^  txt_organiser;
 	private: System::Windows::Forms::Label^  label13;
 	private: System::Windows::Forms::CheckedListBox^  lb_post;
-	private: System::Windows::Forms::TextBox^  txt_num_nominee;
+
 
 
 
@@ -155,7 +155,6 @@ namespace Election_Management_System {
 			this->txt_organiser = (gcnew System::Windows::Forms::TextBox());
 			this->label13 = (gcnew System::Windows::Forms::Label());
 			this->lb_post = (gcnew System::Windows::Forms::CheckedListBox());
-			this->txt_num_nominee = (gcnew System::Windows::Forms::TextBox());
 			this->SuspendLayout();
 			// 
 			// label1
@@ -331,7 +330,7 @@ namespace Election_Management_System {
 			// 
 			// txt_post
 			// 
-			this->txt_post->Location = System::Drawing::Point(454, 457);
+			this->txt_post->Location = System::Drawing::Point(501, 454);
 			this->txt_post->Name = L"txt_post";
 			this->txt_post->Size = System::Drawing::Size(100, 22);
 			this->txt_post->TabIndex = 32;
@@ -508,18 +507,10 @@ namespace Election_Management_System {
 			this->lb_post->Size = System::Drawing::Size(342, 72);
 			this->lb_post->TabIndex = 57;
 			// 
-			// txt_num_nominee
-			// 
-			this->txt_num_nominee->Location = System::Drawing::Point(584, 457);
-			this->txt_num_nominee->Name = L"txt_num_nominee";
-			this->txt_num_nominee->Size = System::Drawing::Size(37, 22);
-			this->txt_num_nominee->TabIndex = 58;
-			// 
 			// User_Control_Create_Election
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
-			this->Controls->Add(this->txt_num_nominee);
 			this->Controls->Add(this->lb_post);
 			this->Controls->Add(this->label13);
 			this->Controls->Add(this->txt_organiser);
@@ -599,7 +590,7 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		if(String::Compare(str5,"")==0)
 			str5="%";
 		//String^ selectString = "SELECT * FROM Student_Information WHERE Approved='YES' ORDER BY Full_Name"; 
-        String^ selectString = "SELECT * FROM Student_Information WHERE Department LIKE '"+str1+"' AND Club_Information LIKE '"+str2+"' AND Program LIKE '"+str3+"' AND Hostel_Information LIKE '"+str4+"' AND Year_Of_Joining LIKE '"+str5+"' AND Approved='YES' ORDER BY Full_Name";
+        String^ selectString = "SELECT * FROM Student_Information WHERE Department LIKE '"+str1+"' AND Club_Information LIKE ',"+str2+",' AND Program LIKE '"+str3+"' AND Hostel_Information LIKE '"+str4+"' AND Year_Of_Joining LIKE '"+str5+"' AND Approved='YES' ORDER BY Full_Name";
         OleDbCommand ^ cmd = gcnew OleDbCommand(selectString, DB_Connection);
 		OleDbDataReader ^ reader = cmd->ExecuteReader();
 		lb_voter->Items->Clear();
@@ -615,19 +606,11 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 		 }
 private: System::Void btn_addpost_Click(System::Object^  sender, System::EventArgs^  e) {
 			
-		String^ str = txt_post->Text+" -" + txt_num_nominee->Text+"(Nominee Count)";
+		String^ str = txt_post->Text;
 		if(String::Compare(txt_post->Text,""))
 		{
-			if(String::Compare(txt_num_nominee->Text,""))
-			{
 				lb_post->Items->Add(str);
 				txt_post->Clear();
-				txt_num_nominee->Clear();
-			}
-			else
-			{
-				MessageBox::Show("Add Number of nominees");
-			}
 		}
 		else
 		{
@@ -747,87 +730,32 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 			return;
 		}
 		String^ election_name = txt_election_name->Text;
-		String^ voter_list="";
+		String^ voter_list=",";
 		for(int i=0;i<lb_voter->Items->Count;i++)
 		{
 			voter_list=voter_list + lb_voter->Items[i] + ",";
 		}
-		String^ organiser_list="";
+		String^ organiser_list=",";
 		for(int i=0;i<lb_organiser->Items->Count;i++)
 		{
 			organiser_list=organiser_list + lb_organiser->Items[i] + "," ;
 		}
-		String^ post_list = "";
-		int arr[10];
-		int val=0;
+		String^ post_list = ",";
 		for(int i=0;i<lb_post->Items->Count; i++)
 		{
-			String^ temp="";
-			int nominee_count=0;
-			String^ str_nominee_count="";
-			String^temp2=Convert::ToString(lb_post->Items[i]);
-			for(int j=0;j<temp2->Length;j++)
-			{
-				if(String::Compare(Convert::ToString(temp2[j])," ")==0)
-				{
-					for(int k=j+2;;k++)
-					{
-						if(temp2[k]>='0' && temp2[k]<='9')
-							str_nominee_count+=temp2[k];
-						else
-							break;
-					}
-					nominee_count=Convert::ToInt32(str_nominee_count);
-	
-					break;
-				}
-				temp+=temp2[j];
-				
-			}
-			post_list = post_list + temp + ",";
-			arr[val++]=nominee_count;
+			post_list = post_list + lb_post->Items[i] + ",";
 		}
 		String^ s_date=Convert::ToString(start_date->Value.Date);
 		String^ s_time=Convert::ToString(start_date->Value.ToLongTimeString());
 		String^ e_date=Convert::ToString(end_date->Value.Date);
 		String^ e_time=Convert::ToString(end_date->Value.ToLongTimeString());
 		String^ visibility=Convert::ToString(comboBox1->SelectedIndex);
-		String ^ insertString = "INSERT INTO Election_Information ([Election_Name],[Voter_List],[Organiser_Head],[Organiser_List],[Post_List],[Approved],[Visibility],[Start_Date],[Start_Time],[End_Date],[End_Time],[Election_Ongoing],[Agenda_Update]) VALUES('" + election_name + "', '" + voter_list + "', '" + "abc" + "','" + organiser_list + "','" + post_list + "','" + "NO" + "', '" + visibility + "', '" + s_date + "','" + s_time + "', '" + e_date + "', '" + e_time + "', '" + "0" + "', '" + "0" + "')";
+		int val=0;
+		String ^ insertString = "INSERT INTO Election_Information ([Election_Name],[Voter_List],[Organiser_Head],[Organiser_List],[Post_List],[Approved],[Visibility],[Start_Date],[Start_Time],[End_Date],[End_Time],[Election_Ongoing],[Agenda_Update]) VALUES('" + election_name + "', '" + voter_list + "', '" + "abc" + "','" + organiser_list + "','" + post_list + "','" + "NO" + "', '" + visibility + "', '" + s_date + "','" + s_time + "', '" + e_date + "', '" + e_time + "', " + val + ", '" + "YES" + "')";
 			OleDbCommand ^ cmd = gcnew OleDbCommand(insertString, DB_Connection);
 			OleDbDataReader ^ reader = cmd->ExecuteReader();
 			reader->Close();
-		String ^ selectString = "SELECT * FROM Election_Information";
-
-		OleDbCommand ^ cmd2 = gcnew OleDbCommand(selectString, DB_Connection);
-		OleDbDataReader ^ reader2 = cmd2->ExecuteReader();
-		int election_id;
-		String^ posts;
-		while(reader2->Read())
-		{
-			election_id=reader2->GetInt32(0);
-			posts=reader2->GetString(5);
-		}
-		reader2->Close();
-
-		int j=0;
-		for(int i=0;i<val;i++)
-		{
-			String^ temp="";
-			while(posts[j]!=',')
-			{
-				temp+=posts[j];
-				j++;
-			}
-			j++;
-			
-			for(int k=0;k<arr[i];k++)
-			{
-				String ^ insertString2 = "INSERT INTO Nominees_Infromation ([Election_ID],[Election_Post],[Nominee_Username],[Agenda],[Votes],[Approved_Organiser],[Approved_Admin]) VALUES(" + election_id + ", '" + temp + "', '" + "*" + "','" + "*" + "'," + 0 + ",'" + "YES" + "', '" + "NO" + "')";
-				OleDbCommand ^ cmd3 = gcnew OleDbCommand(insertString2, DB_Connection);
-				OleDbDataReader ^ reader3 = cmd3->ExecuteReader();
-				reader3->Close();
-			}
-		}
+	
 
 		DB_Connection->Close();
 		MessageBox::Show("Election Added. Approval Pending by admin");
@@ -835,7 +763,12 @@ private: System::Void btn_submit_Click(System::Object^  sender, System::EventArg
 		lb_voter->Items->Clear();
 		lb_organiser->Items->Clear();
 		lb_post->Items->Clear();
-		txt_num_nominee->Clear();
+		Dept->SelectedIndex=0;
+		club_info->SelectedIndex=0;
+		program->SelectedIndex=0;
+		hostel->SelectedIndex=0;
+		year_of_join->Clear();
+		 
 		 }
 
 };

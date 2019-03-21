@@ -50,6 +50,7 @@ namespace Election_Management_System {
 
 
 	private: System::Windows::Forms::Label^  lbl_username;
+	private: System::Windows::Forms::Button^  Forgot_Password;
 
 
 	protected: 
@@ -72,11 +73,14 @@ namespace Election_Management_System {
 			this->txt_password = (gcnew System::Windows::Forms::TextBox());
 			this->lbl_password = (gcnew System::Windows::Forms::Label());
 			this->lbl_username = (gcnew System::Windows::Forms::Label());
+			this->Forgot_Password = (gcnew System::Windows::Forms::Button());
 			this->SuspendLayout();
 			// 
 			// btn_login
 			// 
-			this->btn_login->Location = System::Drawing::Point(206, 256);
+			this->btn_login->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->btn_login->Location = System::Drawing::Point(222, 283);
 			this->btn_login->Margin = System::Windows::Forms::Padding(2);
 			this->btn_login->Name = L"btn_login";
 			this->btn_login->Size = System::Drawing::Size(162, 38);
@@ -87,14 +91,14 @@ namespace Election_Management_System {
 			// 
 			// txt_username
 			// 
-			this->txt_username->Location = System::Drawing::Point(233, 100);
+			this->txt_username->Location = System::Drawing::Point(255, 106);
 			this->txt_username->Name = L"txt_username";
 			this->txt_username->Size = System::Drawing::Size(100, 20);
 			this->txt_username->TabIndex = 1;
 			// 
 			// txt_password
 			// 
-			this->txt_password->Location = System::Drawing::Point(233, 164);
+			this->txt_password->Location = System::Drawing::Point(255, 170);
 			this->txt_password->Name = L"txt_password";
 			this->txt_password->PasswordChar = '*';
 			this->txt_password->Size = System::Drawing::Size(100, 20);
@@ -103,25 +107,41 @@ namespace Election_Management_System {
 			// lbl_password
 			// 
 			this->lbl_password->AutoSize = true;
+			this->lbl_password->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->lbl_password->Location = System::Drawing::Point(135, 167);
 			this->lbl_password->Name = L"lbl_password";
-			this->lbl_password->Size = System::Drawing::Size(53, 13);
+			this->lbl_password->Size = System::Drawing::Size(82, 21);
 			this->lbl_password->TabIndex = 5;
 			this->lbl_password->Text = L"Password";
 			// 
 			// lbl_username
 			// 
 			this->lbl_username->AutoSize = true;
+			this->lbl_username->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->lbl_username->Location = System::Drawing::Point(133, 103);
 			this->lbl_username->Name = L"lbl_username";
-			this->lbl_username->Size = System::Drawing::Size(55, 13);
+			this->lbl_username->Size = System::Drawing::Size(88, 21);
 			this->lbl_username->TabIndex = 7;
 			this->lbl_username->Text = L"Username";
+			// 
+			// Forgot_Password
+			// 
+			this->Forgot_Password->Font = (gcnew System::Drawing::Font(L"Century Gothic", 9.75F, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->Forgot_Password->Location = System::Drawing::Point(246, 234);
+			this->Forgot_Password->Name = L"Forgot_Password";
+			this->Forgot_Password->Size = System::Drawing::Size(124, 26);
+			this->Forgot_Password->TabIndex = 8;
+			this->Forgot_Password->Text = L"Forgot Password";
+			this->Forgot_Password->UseVisualStyleBackColor = true;
 			// 
 			// User_Control_Login
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(6, 13);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
+			this->Controls->Add(this->Forgot_Password);
 			this->Controls->Add(this->lbl_username);
 			this->Controls->Add(this->lbl_password);
 			this->Controls->Add(this->txt_password);

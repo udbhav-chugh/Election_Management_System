@@ -104,120 +104,138 @@ namespace Election_Management_System {
 			// label1
 			// 
 			this->label1->AutoSize = true;
+			this->label1->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label1->Location = System::Drawing::Point(90, 41);
 			this->label1->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label1->Name = L"label1";
-			this->label1->Size = System::Drawing::Size(57, 13);
+			this->label1->Size = System::Drawing::Size(90, 21);
 			this->label1->TabIndex = 0;
 			this->label1->Text = L"UserName";
 			// 
 			// label2
 			// 
 			this->label2->AutoSize = true;
-			this->label2->Location = System::Drawing::Point(90, 72);
+			this->label2->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label2->Location = System::Drawing::Point(90, 75);
 			this->label2->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label2->Name = L"label2";
-			this->label2->Size = System::Drawing::Size(53, 13);
+			this->label2->Size = System::Drawing::Size(82, 21);
 			this->label2->TabIndex = 1;
 			this->label2->Text = L"Password";
 			// 
 			// label3
 			// 
 			this->label3->AutoSize = true;
+			this->label3->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->label3->Location = System::Drawing::Point(89, 111);
 			this->label3->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label3->Name = L"label3";
-			this->label3->Size = System::Drawing::Size(62, 13);
+			this->label3->Size = System::Drawing::Size(108, 21);
 			this->label3->TabIndex = 2;
 			this->label3->Text = L"Department";
 			// 
 			// label4
 			// 
 			this->label4->AutoSize = true;
-			this->label4->Location = System::Drawing::Point(90, 140);
+			this->label4->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label4->Location = System::Drawing::Point(45, 143);
 			this->label4->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label4->Name = L"label4";
-			this->label4->Size = System::Drawing::Size(92, 13);
+			this->label4->Size = System::Drawing::Size(152, 21);
 			this->label4->TabIndex = 3;
 			this->label4->Text = L"Hostel Information";
 			// 
 			// label5
 			// 
 			this->label5->AutoSize = true;
-			this->label5->Location = System::Drawing::Point(90, 175);
+			this->label5->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label5->Location = System::Drawing::Point(104, 170);
 			this->label5->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label5->Name = L"label5";
-			this->label5->Size = System::Drawing::Size(46, 13);
+			this->label5->Size = System::Drawing::Size(76, 21);
 			this->label5->TabIndex = 4;
 			this->label5->Text = L"Program";
 			// 
 			// label6
 			// 
 			this->label6->AutoSize = true;
-			this->label6->Location = System::Drawing::Point(89, 211);
+			this->label6->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label6->Location = System::Drawing::Point(45, 208);
 			this->label6->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label6->Name = L"label6";
-			this->label6->Size = System::Drawing::Size(83, 13);
+			this->label6->Size = System::Drawing::Size(142, 21);
 			this->label6->TabIndex = 5;
 			this->label6->Text = L"Club Information";
 			// 
 			// label7
 			// 
 			this->label7->AutoSize = true;
-			this->label7->Location = System::Drawing::Point(98, 273);
+			this->label7->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label7->Location = System::Drawing::Point(67, 293);
 			this->label7->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label7->Name = L"label7";
-			this->label7->Size = System::Drawing::Size(74, 13);
+			this->label7->Size = System::Drawing::Size(120, 21);
 			this->label7->TabIndex = 6;
 			this->label7->Text = L"Year of joining";
 			// 
 			// label8
 			// 
 			this->label8->AutoSize = true;
-			this->label8->Location = System::Drawing::Point(98, 303);
+			this->label8->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->label8->Location = System::Drawing::Point(94, 338);
 			this->label8->Margin = System::Windows::Forms::Padding(2, 0, 2, 0);
 			this->label8->Name = L"label8";
-			this->label8->Size = System::Drawing::Size(54, 13);
+			this->label8->Size = System::Drawing::Size(86, 21);
 			this->label8->TabIndex = 7;
 			this->label8->Text = L"Full Name";
 			this->label8->Click += gcnew System::EventHandler(this, &User_Control_Register::label8_Click);
 			// 
 			// txt_username
 			// 
-			this->txt_username->Location = System::Drawing::Point(190, 38);
-			this->txt_username->Margin = System::Windows::Forms::Padding(2);
+			this->txt_username->Location = System::Drawing::Point(206, 44);
+			this->txt_username->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txt_username->Name = L"txt_username";
 			this->txt_username->Size = System::Drawing::Size(201, 20);
 			this->txt_username->TabIndex = 8;
 			// 
 			// txt_password
 			// 
-			this->txt_password->Location = System::Drawing::Point(190, 69);
-			this->txt_password->Margin = System::Windows::Forms::Padding(2);
+			this->txt_password->Location = System::Drawing::Point(206, 75);
+			this->txt_password->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txt_password->Name = L"txt_password";
 			this->txt_password->Size = System::Drawing::Size(201, 20);
 			this->txt_password->TabIndex = 9;
 			// 
 			// txt_year_of_join
 			// 
-			this->txt_year_of_join->Location = System::Drawing::Point(190, 270);
-			this->txt_year_of_join->Margin = System::Windows::Forms::Padding(2);
+			this->txt_year_of_join->Location = System::Drawing::Point(206, 296);
+			this->txt_year_of_join->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txt_year_of_join->Name = L"txt_year_of_join";
 			this->txt_year_of_join->Size = System::Drawing::Size(201, 20);
 			this->txt_year_of_join->TabIndex = 14;
 			// 
 			// txt_full_name
 			// 
-			this->txt_full_name->Location = System::Drawing::Point(190, 303);
-			this->txt_full_name->Margin = System::Windows::Forms::Padding(2);
+			this->txt_full_name->Location = System::Drawing::Point(206, 341);
+			this->txt_full_name->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->txt_full_name->Name = L"txt_full_name";
 			this->txt_full_name->Size = System::Drawing::Size(201, 20);
 			this->txt_full_name->TabIndex = 15;
 			// 
 			// btn_submit
 			// 
-			this->btn_submit->Location = System::Drawing::Point(267, 336);
-			this->btn_submit->Margin = System::Windows::Forms::Padding(2);
+			this->btn_submit->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->btn_submit->Location = System::Drawing::Point(255, 379);
+			this->btn_submit->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->btn_submit->Name = L"btn_submit";
 			this->btn_submit->Size = System::Drawing::Size(88, 38);
 			this->btn_submit->TabIndex = 16;
@@ -228,7 +246,7 @@ namespace Election_Management_System {
 			// combo_hostel
 			// 
 			this->combo_hostel->FormattingEnabled = true;
-			this->combo_hostel->Location = System::Drawing::Point(190, 137);
+			this->combo_hostel->Location = System::Drawing::Point(206, 146);
 			this->combo_hostel->Name = L"combo_hostel";
 			this->combo_hostel->Size = System::Drawing::Size(121, 21);
 			this->combo_hostel->TabIndex = 17;
@@ -236,7 +254,7 @@ namespace Election_Management_System {
 			// combo_program
 			// 
 			this->combo_program->FormattingEnabled = true;
-			this->combo_program->Location = System::Drawing::Point(190, 172);
+			this->combo_program->Location = System::Drawing::Point(206, 173);
 			this->combo_program->Name = L"combo_program";
 			this->combo_program->Size = System::Drawing::Size(121, 21);
 			this->combo_program->TabIndex = 18;
@@ -244,7 +262,7 @@ namespace Election_Management_System {
 			// combo_club
 			// 
 			this->combo_club->FormattingEnabled = true;
-			this->combo_club->Location = System::Drawing::Point(190, 208);
+			this->combo_club->Location = System::Drawing::Point(206, 208);
 			this->combo_club->Name = L"combo_club";
 			this->combo_club->Size = System::Drawing::Size(121, 21);
 			this->combo_club->TabIndex = 19;
@@ -252,7 +270,7 @@ namespace Election_Management_System {
 			// combo_department
 			// 
 			this->combo_department->FormattingEnabled = true;
-			this->combo_department->Location = System::Drawing::Point(190, 103);
+			this->combo_department->Location = System::Drawing::Point(206, 111);
 			this->combo_department->Name = L"combo_department";
 			this->combo_department->Size = System::Drawing::Size(121, 21);
 			this->combo_department->TabIndex = 20;
@@ -267,9 +285,11 @@ namespace Election_Management_System {
 			// 
 			// btn_club_add
 			// 
+			this->btn_club_add->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
 			this->btn_club_add->Location = System::Drawing::Point(378, 237);
 			this->btn_club_add->Name = L"btn_club_add";
-			this->btn_club_add->Size = System::Drawing::Size(75, 23);
+			this->btn_club_add->Size = System::Drawing::Size(75, 37);
 			this->btn_club_add->TabIndex = 22;
 			this->btn_club_add->Text = L"Add";
 			this->btn_club_add->UseVisualStyleBackColor = true;
@@ -277,9 +297,11 @@ namespace Election_Management_System {
 			// 
 			// btn_club_delete
 			// 
-			this->btn_club_delete->Location = System::Drawing::Point(206, 235);
+			this->btn_club_delete->Font = (gcnew System::Drawing::Font(L"Century Gothic", 12, System::Drawing::FontStyle::Regular, System::Drawing::GraphicsUnit::Point, 
+				static_cast<System::Byte>(0)));
+			this->btn_club_delete->Location = System::Drawing::Point(225, 237);
 			this->btn_club_delete->Name = L"btn_club_delete";
-			this->btn_club_delete->Size = System::Drawing::Size(80, 23);
+			this->btn_club_delete->Size = System::Drawing::Size(80, 37);
 			this->btn_club_delete->TabIndex = 23;
 			this->btn_club_delete->Text = L"Delete";
 			this->btn_club_delete->UseVisualStyleBackColor = true;
@@ -309,7 +331,7 @@ namespace Election_Management_System {
 			this->Controls->Add(this->label3);
 			this->Controls->Add(this->label2);
 			this->Controls->Add(this->label1);
-			this->Margin = System::Windows::Forms::Padding(2);
+			this->Margin = System::Windows::Forms::Padding(2, 2, 2, 2);
 			this->Name = L"User_Control_Register";
 			this->Size = System::Drawing::Size(575, 491);
 			this->Load += gcnew System::EventHandler(this, &User_Control_Register::User_Control_Register_Load);
@@ -352,9 +374,9 @@ namespace Election_Management_System {
 				 combo_hostel->Items->Add("Dhansari");
 				 combo_hostel->Items->Add("Married Scholar");
 				 combo_hostel->Items->Add("Lohit");
-				 combo_program->Items->Add("Btech");
-				 combo_program->Items->Add("Mtech");
-				 combo_program->Items->Add("BDes");
+				 combo_program->Items->Add("B.Tech.");
+				 combo_program->Items->Add("M.Tech.");
+				 combo_program->Items->Add("B.Des.");
 				 combo_program->Items->Add("Phd");
 			 }
 	private: System::Void btn_submit_Click(System::Object^  sender, System::EventArgs^  e) {
@@ -391,7 +413,7 @@ namespace Election_Management_System {
 					 String ^ department = combo_department->Text;
 					 String ^ hostel = combo_hostel->Text;
 					 String ^ program = combo_program->Text;
-					 String ^ club = "";
+					 String ^ club = ",";
 
 					 for(int i = 0; i < combo_club->Items->Count; i++){
 						 club = club  + combo_club->Items[i]->ToString();
@@ -411,10 +433,25 @@ namespace Election_Management_System {
 	private: System::Void label8_Click(System::Object^  sender, System::EventArgs^  e) {
 			 }
 	private: System::Void btn_club_add_Click(System::Object^  sender, System::EventArgs^  e) {
-				 combo_club->Items->Add(combo_add_club->Text);
+				 if(combo_club->Items->Contains(combo_add_club->Text) == false){
+					 combo_club->Items->Add(combo_add_club->Text);
+				 }else{
+					 MessageBox::Show("Already Added");
+				 }
 			 }
 	private: System::Void btn_club_delete_Click(System::Object^  sender, System::EventArgs^  e) {
-				 combo_club->Items->Remove(combo_club->Text);
+				 if(combo_club->Items->Contains(combo_add_club->Text) == true){
+					 combo_club->Items->Remove(combo_club->Text);
+				 }else{
+					 MessageBox::Show("No such entry");
+				 }
 			 }
+
+
+
+
+
+
+
 	};
 }

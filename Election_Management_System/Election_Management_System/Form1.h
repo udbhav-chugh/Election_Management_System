@@ -3,6 +3,8 @@
 #include "User_Control_Register.h"
 #include "Form_Election.h"
 #include "User_Control_Login.h"
+#include "View_Public_Elections.h"
+#include "Form_Admin.h"
 
 namespace Election_Management_System {
 
@@ -101,6 +103,7 @@ namespace Election_Management_System {
 			this->btn_admin->TabIndex = 3;
 			this->btn_admin->Text = L"Admin";
 			this->btn_admin->UseVisualStyleBackColor = true;
+			this->btn_admin->Click += gcnew System::EventHandler(this, &Form1::btn_admin_Click);
 			// 
 			// btn_public_election
 			// 
@@ -110,6 +113,7 @@ namespace Election_Management_System {
 			this->btn_public_election->TabIndex = 2;
 			this->btn_public_election->Text = L"View Public Elections";
 			this->btn_public_election->UseVisualStyleBackColor = true;
+			this->btn_public_election->Click += gcnew System::EventHandler(this, &Form1::btn_public_election_Click_1);
 			// 
 			// btn_register
 			// 
@@ -173,6 +177,14 @@ private: System::Void button1_Click(System::Object^  sender, System::EventArgs^ 
 			 frm->Show();
 		 }
 
+private: System::Void btn_public_election_Click_1(System::Object^  sender, System::EventArgs^  e) {
+			 pnl_output->Controls->Clear();
+			 pnl_output->Controls->Add(gcnew View_Public_Elections);
+		 }
+private: System::Void btn_admin_Click(System::Object^  sender, System::EventArgs^  e) {
+			 Form_Admin ^ adminForm = gcnew Form_Admin();
+			 adminForm->Show();
+		 }
 };
 }
 

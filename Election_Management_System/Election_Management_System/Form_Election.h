@@ -1,6 +1,8 @@
 #pragma once
 
 #include "User_Control_Create_Election.h"
+#include "User_Control_Nominee.h"
+#include "User_Control_Manage_Election.h"
 
 namespace Election_Management_System {
 
@@ -63,11 +65,11 @@ namespace Election_Management_System {
 		void InitializeComponent(void)
 		{
 			this->panel1 = (gcnew System::Windows::Forms::Panel());
+			this->btn_add_nominee = (gcnew System::Windows::Forms::Button());
 			this->btn_go_back = (gcnew System::Windows::Forms::Button());
 			this->btn_manage_election = (gcnew System::Windows::Forms::Button());
 			this->btn_create_election = (gcnew System::Windows::Forms::Button());
 			this->pnl_output = (gcnew System::Windows::Forms::Panel());
-			this->btn_add_nominee = (gcnew System::Windows::Forms::Button());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -82,6 +84,16 @@ namespace Election_Management_System {
 			this->panel1->Size = System::Drawing::Size(191, 722);
 			this->panel1->TabIndex = 0;
 			this->panel1->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Election::panel1_Paint);
+			// 
+			// btn_add_nominee
+			// 
+			this->btn_add_nominee->Location = System::Drawing::Point(12, 222);
+			this->btn_add_nominee->Name = L"btn_add_nominee";
+			this->btn_add_nominee->Size = System::Drawing::Size(140, 53);
+			this->btn_add_nominee->TabIndex = 3;
+			this->btn_add_nominee->Text = L"Add Nominees";
+			this->btn_add_nominee->UseVisualStyleBackColor = true;
+			this->btn_add_nominee->Click += gcnew System::EventHandler(this, &Form_Election::btn_add_nominee_Click);
 			// 
 			// btn_go_back
 			// 
@@ -100,6 +112,7 @@ namespace Election_Management_System {
 			this->btn_manage_election->TabIndex = 1;
 			this->btn_manage_election->Text = L"Manage Election";
 			this->btn_manage_election->UseVisualStyleBackColor = true;
+			this->btn_manage_election->Click += gcnew System::EventHandler(this, &Form_Election::btn_manage_election_Click);
 			// 
 			// btn_create_election
 			// 
@@ -118,15 +131,6 @@ namespace Election_Management_System {
 			this->pnl_output->Size = System::Drawing::Size(818, 722);
 			this->pnl_output->TabIndex = 1;
 			this->pnl_output->Paint += gcnew System::Windows::Forms::PaintEventHandler(this, &Form_Election::panel2_Paint);
-			// 
-			// btn_add_nominee
-			// 
-			this->btn_add_nominee->Location = System::Drawing::Point(12, 222);
-			this->btn_add_nominee->Name = L"btn_add_nominee";
-			this->btn_add_nominee->Size = System::Drawing::Size(140, 53);
-			this->btn_add_nominee->TabIndex = 3;
-			this->btn_add_nominee->Text = L"Add Nominees";
-			this->btn_add_nominee->UseVisualStyleBackColor = true;
 			// 
 			// Form_Election
 			// 
@@ -152,6 +156,14 @@ private: System::Void btn_create_election_Click(System::Object^  sender, System:
 			 pnl_output->Controls->Add(gcnew User_Control_Create_Election);
 		 }
 private: System::Void panel1_Paint(System::Object^  sender, System::Windows::Forms::PaintEventArgs^  e) {
+		 }
+private: System::Void btn_add_nominee_Click(System::Object^  sender, System::EventArgs^  e) {
+			 pnl_output->Controls->Clear();
+			 pnl_output->Controls->Add(gcnew User_Control_Nominee);
+		 }
+private: System::Void btn_manage_election_Click(System::Object^  sender, System::EventArgs^  e) {
+			 pnl_output->Controls->Clear();
+			 pnl_output->Controls->Add(gcnew User_Control_Manage_Election);
 		 }
 };
 }

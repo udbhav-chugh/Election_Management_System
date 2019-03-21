@@ -57,9 +57,12 @@ namespace Election_Management_System {
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Name = L"User_Control_View_Election";
 			this->Size = System::Drawing::Size(767, 604);
+			this->Load += gcnew System::EventHandler(this, &User_Control_View_Election::User_Control_View_Election_Load);
 			this->ResumeLayout(false);
 
 		}
 #pragma endregion
+	private: System::Void User_Control_View_Election_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
 	};
 }
