@@ -69,9 +69,6 @@
     <ClCompile Include="Update_Agenda_form.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="User_Control_View_Election1.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -123,9 +120,6 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="Update_Agenda_form.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="User_Control_View_Election1.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

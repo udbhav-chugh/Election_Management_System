@@ -104,7 +104,6 @@
     <ClCompile Include="User_Control_Register.cpp" />
     <ClCompile Include="User_Control_Update_Agenda.cpp" />
     <ClCompile Include="User_Control_View_Election.cpp" />
-    <ClCompile Include="User_Control_View_Election1.cpp" />
     <ClCompile Include="User_Control_View_info.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -150,9 +149,6 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_View_Election.h">
-      <FileType>CppControl</FileType>
-    </ClInclude>
-    <ClInclude Include="User_Control_View_Election1.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_View_info.h">

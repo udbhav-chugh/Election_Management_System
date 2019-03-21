@@ -166,6 +166,8 @@ namespace Election_Management_System {
 					 i = i + 1;
 
 				 }
+				 reader->Close();
+				 DB_Connection->Close();
 			 }
 };
 }

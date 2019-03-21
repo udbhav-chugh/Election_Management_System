@@ -116,6 +116,7 @@ namespace Election_Management_System {
 			this->btn_view_election->TabIndex = 3;
 			this->btn_view_election->Text = L"View Election";
 			this->btn_view_election->UseVisualStyleBackColor = true;
+			this->btn_view_election->Click += gcnew System::EventHandler(this, &Form_Homepage::btn_view_election_Click);
 			// 
 			// btn_create_election
 			// 
@@ -213,6 +214,12 @@ private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  
 private: System::Void btn_update_agenda_Click(System::Object^  sender, System::EventArgs^  e) {
 			 panel2->Controls->Clear();
 			 User_Control_Dynamic_Nominee_election ^ dumb_agenda = gcnew User_Control_Dynamic_Nominee_election;
+			 dumb_agenda->SomeText=this->label1->Text;
+			 panel2->Controls->Add(dumb_agenda);
+		 }
+private: System::Void btn_view_election_Click(System::Object^  sender, System::EventArgs^  e) {
+			 panel2->Controls->Clear();
+			 User_Control_View_Election ^ dumb_agenda = gcnew User_Control_View_Election;
 			 dumb_agenda->SomeText=this->label1->Text;
 			 panel2->Controls->Add(dumb_agenda);
 		 }
