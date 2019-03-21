@@ -91,12 +91,14 @@
     <ClCompile Include="Form_Admin.cpp" />
     <ClCompile Include="Form_Election.cpp" />
     <ClCompile Include="Form_Homepage.cpp" />
+    <ClCompile Include="Form_Update_Agenda.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="User_Control_Delete_Election.cpp" />
     <ClCompile Include="User_Control_Delete_User.cpp" />
+    <ClCompile Include="User_Control_Dynamic_Nominee_election.cpp" />
     <ClCompile Include="User_Control_Edit_Info.cpp" />
     <ClCompile Include="User_Control_Election_Request.cpp" />
     <ClCompile Include="User_Control_Login.cpp" />
@@ -124,6 +126,9 @@
     <ClInclude Include="Form_Homepage.h">
       <FileType>CppForm</FileType>
     </ClInclude>
+    <ClInclude Include="Form_Update_Agenda.h">
+      <FileType>CppForm</FileType>
+    </ClInclude>
     <ClInclude Include="resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="User_Control_Create_Election.h">
@@ -133,6 +138,9 @@
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Delete_User.h">
+      <FileType>CppControl</FileType>
+    </ClInclude>
+    <ClInclude Include="User_Control_Dynamic_Nominee_election.h">
       <FileType>CppControl</FileType>
     </ClInclude>
     <ClInclude Include="User_Control_Edit_Info.h">
@@ -192,6 +200,9 @@
     <EmbeddedResource Include="Form_Homepage.resx">
       <DependentUpon>Form_Homepage.h</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_Update_Agenda.resx">
+      <DependentUpon>Form_Update_Agenda.h</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Create_Election.resx">
       <DependentUpon>User_Control_Create_Election.h</DependentUpon>
     </EmbeddedResource>
@@ -200,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Delete_User.resx">
       <DependentUpon>User_Control_Delete_User.h</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Dynamic_Nominee_election.resx">
+      <DependentUpon>User_Control_Dynamic_Nominee_election.h</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Edit_Info.resx">
       <DependentUpon>User_Control_Edit_Info.h</DependentUpon>

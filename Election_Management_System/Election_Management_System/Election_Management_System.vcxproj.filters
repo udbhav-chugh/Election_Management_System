@@ -84,6 +84,12 @@
     <ClCompile Include="User_Control_Delete_User.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="User_Control_Dynamic_Nominee_election.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Form_Update_Agenda.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Form1.h">
@@ -152,6 +158,12 @@
     <ClInclude Include="User_Control_Delete_User.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="User_Control_Dynamic_Nominee_election.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Form_Update_Agenda.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="app.rc">
@@ -199,6 +211,24 @@
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
     <EmbeddedResource Include="User_Control_Nominee.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Delete_Election.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Delete_User.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Election_Request.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_Update_User.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="User_Control_User_Request.resx">
+      <Filter>Resource Files</Filter>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View_Public_Elections.resx">
       <Filter>Resource Files</Filter>
     </EmbeddedResource>
   </ItemGroup>

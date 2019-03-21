@@ -179,11 +179,10 @@ namespace Election_Management_System {
 						 }
 						 else
 						 {
-							 //Form1 ^ f3 = gcnew Form1(id);
-							 //SomeGlobalVariables.curr_username = txt_password->Text;
 							 // LOG IN SUCCESFULL
 							 //MessageBox::Show(f3->id);
 							 Form_Homepage ^ frm = gcnew Form_Homepage;
+							 frm->SomeText=txt_username->Text;
 							 frm->Show();
 						 }
 					 }

@@ -1,4 +1,5 @@
 #pragma once
+#include "Form_Update_Agenda.h"
 #using <System.dll>
 #using <System.data.dll>
 #include <string.h>
@@ -14,12 +15,12 @@ using namespace System::Data::OleDb;
 namespace Election_Management_System {
 
 	/// <summary>
-	/// Summary for User_Control_View_Election
+	/// Summary for User_Control_Dynamic_Nominee_election
 	/// </summary>
-	public ref class User_Control_View_Election : public System::Windows::Forms::UserControl
+	public ref class User_Control_Dynamic_Nominee_election : public System::Windows::Forms::UserControl
 	{
 	public:
-		User_Control_View_Election(void)
+		User_Control_Dynamic_Nominee_election(void)
 		{
 			InitializeComponent();
 			//
@@ -31,7 +32,7 @@ namespace Election_Management_System {
 		/// <summary>
 		/// Clean up any resources being used.
 		/// </summary>
-		~User_Control_View_Election()
+		~User_Control_Dynamic_Nominee_election()
 		{
 			if (components)
 			{
@@ -59,41 +60,40 @@ namespace Election_Management_System {
 			// 
 			// txt_username
 			// 
-			this->txt_username->Location = System::Drawing::Point(333, 291);
+			this->txt_username->Location = System::Drawing::Point(16, 17);
 			this->txt_username->Name = L"txt_username";
 			this->txt_username->Size = System::Drawing::Size(100, 22);
-			this->txt_username->TabIndex = 1;
+			this->txt_username->TabIndex = 0;
 			this->txt_username->Visible = false;
 			// 
-			// User_Control_View_Election
+			// User_Control_Dynamic_Nominee_election
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->Controls->Add(this->txt_username);
-			this->Name = L"User_Control_View_Election";
-			this->Size = System::Drawing::Size(767, 604);
-			this->Load += gcnew System::EventHandler(this, &User_Control_View_Election::User_Control_View_Election_Load);
+			this->Name = L"User_Control_Dynamic_Nominee_election";
+			this->Size = System::Drawing::Size(756, 550);
+			this->Load += gcnew System::EventHandler(this, &User_Control_Dynamic_Nominee_election::User_Control_Dynamic_Nominee_election_Load);
 			this->ResumeLayout(false);
 			this->PerformLayout();
 
 		}
 #pragma endregion
-
 	private: System::Void btn_approv_Click(System::Object ^  sender, System::EventArgs^  e) {
 				 System::Windows::Forms::Button ^ temp_btn = gcnew System::Windows::Forms::Button();
 				 temp_btn = dynamic_cast<System::Windows::Forms::Button ^>(sender);
 				 String ^ name = temp_btn->Name;
-				 // 				 Form_Update_Agenda ^ dumb_agenda = gcnew Form_Update_Agenda;
-				 // 				 dumb_agenda->SomeText=this->txt_username->Text;
-				 // 				 dumb_agenda->Election_ID=temp_btn->Name;
-				 // 				 dumb_agenda->Show();
-				 // 				 Form_Admin::btn_userrequest_Click();
-				 // 				 this->Controls->Clear();
-				 // 				 this->InitializeComponent();
-				 // 				 this->User_Control_Dynamic_Nominee_election_Load(e, e);
+				 Form_Update_Agenda ^ dumb_agenda = gcnew Form_Update_Agenda;
+				 dumb_agenda->SomeText=this->txt_username->Text;
+				 dumb_agenda->Election_ID=temp_btn->Name;
+				 dumb_agenda->Show();
+				 //Form_Admin::btn_userrequest_Click();
+				 //this->Controls->Clear();
+				 //this->InitializeComponent();
+				 //this->User_Control_Dynamic_Nominee_election_Load(e, e);
 			 }
 
-			 void creator(int i, int ^ election_id, String ^ election_name){
+			 void creator(int i, int ^ election_id, String ^ election_post){
 				 System::Windows::Forms::TextBox ^ txtbox1 = gcnew System::Windows::Forms::TextBox();
 				 System::Windows::Forms::Button ^ btn_approv = gcnew System::Windows::Forms::Button();
 				 System::Windows::Forms::Button ^ btn_disapprov = gcnew System::Windows::Forms::Button();
@@ -125,14 +125,15 @@ namespace Election_Management_System {
 				 this->Controls->Add(btn_approv);
 				 this->Controls->Add(txtbox1);
 
-				 txtbox1->Text = " Election ID : " + Convert::ToString(election_id) + "\r\n Election Name : " + election_name + "\r\n";
+				 txtbox1->Text = " Election ID : " + Convert::ToString(election_id) + "\r\n Election Post : " + election_post + "\r\n";
 				 txtbox1->ScrollToCaret();
 				 txtbox1->ScrollBars = System::Windows::Forms::ScrollBars::Vertical;
 				 txtbox1->Refresh();
 
-				 btn_approv->Click += gcnew System::EventHandler(this, &User_Control_View_Election::btn_approv_Click);
+				 btn_approv->Click += gcnew System::EventHandler(this, &User_Control_Dynamic_Nominee_election::btn_approv_Click);
 
 			 }
+
 	public: property System::String^ SomeText
 			{
 				System::String^ get()
@@ -144,28 +145,29 @@ namespace Election_Management_System {
 					txt_username->Text = text;
 				}
 			}
-	private: System::Void User_Control_View_Election_Load(System::Object^  sender, System::EventArgs^  e) {
+	private: System::Void User_Control_Dynamic_Nominee_election_Load(System::Object^  sender, System::EventArgs^  e) {
 				 int i;
 				 i = 1;
 				 OleDbConnection ^ DB_Connection = gcnew OleDbConnection();
 				 DB_Connection->ConnectionString = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=Election_Management_System.accdb";
 				 DB_Connection->Open();
-				 String ^ query = " SELECT * FROM Election_Information WHERE Voter_List Like '%,"+txt_username->Text+",%' AND Approved='YES'";
+				 String ^ query = " SELECT * FROM Nominees_Information WHERE Nominee_Username = '"+txt_username->Text+"' AND Update_Allowed = 'YES'";
 				 OleDbCommand ^ cmd = gcnew OleDbCommand(query, DB_Connection);
 				 OleDbDataReader ^ reader = cmd->ExecuteReader();
+				 //DB_Connection->Close();
 
 				 while(reader->Read() == true){
 
 					 int ^ election_id = reader->GetInt32(0);					 
-					 String ^ election_name = reader->GetString(1);
+					 String ^ election_post = reader->GetString(1);
 
-					 creator(i, election_id, election_name);
+					 creator(i, election_id, election_post);
 
 					 i = i + 1;
 
 				 }
 				 reader->Close();
-				 //DB_Connection->Close();
+				 DB_Connection->Close();
 			 }
 	};
 }

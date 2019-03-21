@@ -1,8 +1,8 @@
 #pragma once
 
 
-#include "User_Control_User_Request.h";
-#include "User_Control_Election_Request.h";
+#include "User_Control_User_Request.h"
+#include "User_Control_Election_Request.h"
 #include "User_Control_Update_User.h"
 #include "User_Control_Delete_User.h"
 #include "User_Control_Delete_Election.h"
