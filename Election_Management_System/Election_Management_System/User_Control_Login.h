@@ -163,7 +163,6 @@ namespace Election_Management_System {
 						//MessageBox::Show(current_Login);
 						Form_Homepage ^ dumb_frm = gcnew Form_Homepage;
 						dumb_frm->SomeText=this->txt_username->Text;
-						MessageBox::Show(dumb_frm->SomeText);
 						dumb_frm->Show();
 					}
 				}

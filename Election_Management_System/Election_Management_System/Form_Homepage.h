@@ -3,6 +3,7 @@
 #include "User_Control_View_info.h"
 #include "User_Control_View_Election.h"
 #include "User_Control_Update_Agenda.h"
+#include "User_Control_Dynamic_Nominee_election.h"
 namespace Election_Management_System {
 
 	using namespace System;
@@ -211,7 +212,7 @@ private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  
 		 }
 private: System::Void btn_update_agenda_Click(System::Object^  sender, System::EventArgs^  e) {
 			 panel2->Controls->Clear();
-			 User_Control_Update_Agenda ^ dumb_agenda = gcnew User_Control_Update_Agenda;
+			 User_Control_Dynamic_Nominee_election ^ dumb_agenda = gcnew User_Control_Dynamic_Nominee_election;
 			 dumb_agenda->SomeText=this->label1->Text;
 			 panel2->Controls->Add(dumb_agenda);
 		 }
