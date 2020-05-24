@@ -1,5 +1,9 @@
 #pragma once
-
+#include "User_Control_Edit_Info.h"
+#include "User_Control_View_info.h"
+#include "User_Control_View_Election.h"
+#include "User_Control_Update_Agenda.h"
+#include "User_Control_Dynamic_Nominee_election.h"
 namespace Election_Management_System {
 
 	using namespace System;
@@ -43,6 +47,7 @@ namespace Election_Management_System {
 	private: System::Windows::Forms::Button^  btn_edit_info;
 	private: System::Windows::Forms::Button^  btn_view_info;
 	private: System::Windows::Forms::Panel^  panel2;
+	private: System::Windows::Forms::Label^  label1;
 	protected: 
 
 	private:
@@ -66,6 +71,7 @@ namespace Election_Management_System {
 			this->btn_edit_info = (gcnew System::Windows::Forms::Button());
 			this->btn_view_info = (gcnew System::Windows::Forms::Button());
 			this->panel2 = (gcnew System::Windows::Forms::Panel());
+			this->label1 = (gcnew System::Windows::Forms::Label());
 			this->panel1->SuspendLayout();
 			this->SuspendLayout();
 			// 
@@ -90,6 +96,7 @@ namespace Election_Management_System {
 			this->btn_logout->TabIndex = 6;
 			this->btn_logout->Text = L"Logout";
 			this->btn_logout->UseVisualStyleBackColor = true;
+			this->btn_logout->Click += gcnew System::EventHandler(this, &Form_Homepage::btn_logout_Click);
 			// 
 			// btn_update_agenda
 			// 
@@ -99,6 +106,7 @@ namespace Election_Management_System {
 			this->btn_update_agenda->TabIndex = 4;
 			this->btn_update_agenda->Text = L"Update Agenda";
 			this->btn_update_agenda->UseVisualStyleBackColor = true;
+			this->btn_update_agenda->Click += gcnew System::EventHandler(this, &Form_Homepage::btn_update_agenda_Click);
 			// 
 			// btn_view_election
 			// 
@@ -108,6 +116,7 @@ namespace Election_Management_System {
 			this->btn_view_election->TabIndex = 3;
 			this->btn_view_election->Text = L"View Election";
 			this->btn_view_election->UseVisualStyleBackColor = true;
+			this->btn_view_election->Click += gcnew System::EventHandler(this, &Form_Homepage::btn_view_election_Click);
 			// 
 			// btn_create_election
 			// 
@@ -126,6 +135,7 @@ namespace Election_Management_System {
 			this->btn_edit_info->TabIndex = 1;
 			this->btn_edit_info->Text = L"Edit Info";
 			this->btn_edit_info->UseVisualStyleBackColor = true;
+			this->btn_edit_info->Click += gcnew System::EventHandler(this, &Form_Homepage::btn_edit_info_Click);
 			// 
 			// btn_view_info
 			// 
@@ -135,6 +145,7 @@ namespace Election_Management_System {
 			this->btn_view_info->TabIndex = 0;
 			this->btn_view_info->Text = L"View Info";
 			this->btn_view_info->UseVisualStyleBackColor = true;
+			this->btn_view_info->Click += gcnew System::EventHandler(this, &Form_Homepage::btn_view_info_Click);
 			// 
 			// panel2
 			// 
@@ -143,19 +154,74 @@ namespace Election_Management_System {
 			this->panel2->Size = System::Drawing::Size(767, 604);
 			this->panel2->TabIndex = 1;
 			// 
+			// label1
+			// 
+			this->label1->AutoSize = true;
+			this->label1->Location = System::Drawing::Point(677, 24);
+			this->label1->Name = L"label1";
+			this->label1->Size = System::Drawing::Size(46, 17);
+			this->label1->TabIndex = 2;
+			this->label1->Text = L"label1";
+			this->label1->Click += gcnew System::EventHandler(this, &Form_Homepage::label1_Click);
+			// 
 			// Form_Homepage
 			// 
 			this->AutoScaleDimensions = System::Drawing::SizeF(8, 16);
 			this->AutoScaleMode = System::Windows::Forms::AutoScaleMode::Font;
 			this->ClientSize = System::Drawing::Size(1006, 721);
+			this->Controls->Add(this->label1);
 			this->Controls->Add(this->panel2);
 			this->Controls->Add(this->panel1);
 			this->Name = L"Form_Homepage";
 			this->Text = L"Form_Homepage";
+			this->Load += gcnew System::EventHandler(this, &Form_Homepage::Form_Homepage_Load);
 			this->panel1->ResumeLayout(false);
 			this->ResumeLayout(false);
+			this->PerformLayout();
 
 		}
+	public: property System::String^ SomeText
+			{
+				System::String^ get()
+				{
+					return label1->Text;
+				}
+				void set(System::String^ text)
+				{
+					label1->Text = text;
+				}
+			}
 #pragma endregion
+	private: System::Void Form_Homepage_Load(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void btn_view_info_Click(System::Object^  sender, System::EventArgs^  e) {
+				 panel2->Controls->Clear();
+				 User_Control_View_info ^ dumb_view = gcnew User_Control_View_info;
+				 dumb_view->SomeText=this->label1->Text;
+				 panel2->Controls->Add( dumb_view);
+			 }
+	private: System::Void btn_edit_info_Click(System::Object^  sender, System::EventArgs^  e) {
+				 panel2->Controls->Clear();
+				 User_Control_Edit_Info ^ dumb_edit = gcnew User_Control_Edit_Info;
+				 dumb_edit->SomeText=this->label1->Text;
+				 panel2->Controls->Add(dumb_edit);
+			 }
+	private: System::Void btn_logout_Click(System::Object^  sender, System::EventArgs^  e) {
+				 this->Hide();
+			 }
+	private: System::Void label1_Click(System::Object^  sender, System::EventArgs^  e) {
+			 }
+	private: System::Void btn_update_agenda_Click(System::Object^  sender, System::EventArgs^  e) {
+				 panel2->Controls->Clear();
+				 User_Control_Dynamic_Nominee_election ^ dumb_agenda = gcnew User_Control_Dynamic_Nominee_election;
+				 dumb_agenda->SomeText=this->label1->Text;
+				 panel2->Controls->Add(dumb_agenda);
+			 }
+	private: System::Void btn_view_election_Click(System::Object^  sender, System::EventArgs^  e) {
+				 panel2->Controls->Clear();
+				 User_Control_View_Election ^ dumb_agenda = gcnew User_Control_View_Election;
+				 dumb_agenda->SomeText=this->label1->Text;
+				 panel2->Controls->Add(dumb_agenda);
+			 }
 	};
 }
